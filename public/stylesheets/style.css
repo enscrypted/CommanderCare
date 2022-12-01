@@ -1,0 +1,243 @@
+body {
+	font-family: 'Source Sans Pro', sans-serif!important;
+}
+
+#header {
+	background-color: #26265e;
+}
+
+#header a {
+	color: #f8f8f8;
+}
+
+#header a:hover {
+	color: #e0e0e0;
+}
+
+#cust {
+	color: #26265e !important;
+	background-color: #f8f8f8 !important;
+}
+
+#cust:hover {
+	background-color: #e0e0e0 !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23f8f8f8' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+  background-color: #26265e;
+  width: 15% !important;
+}
+
+.navbar-toggler-icon:hover {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23e0e0e0' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+#burger {
+	border: none;}
+
+#top1 {
+	background-color: #26265e;
+	color: #f8f8f8;
+	height: 75% !important;
+	z-index: -2;
+}
+
+#top2-1 {
+	background-color: #f8f8f8 !important;
+	color: #26265e !important;
+	padding-bottom: 5% !important;
+	margin-top: -10% !important;
+	z-index: -1 !important;
+    padding-right: 0;
+}
+
+#top2-2 {
+	background-color: #f8f8f8 !important;
+	color: #26265e !important;
+	padding-bottom: 5% !important;
+	margin-top: -10% !important;
+	z-index: -1 !important;
+	padding-left: 0;
+}
+
+#top-img {
+	margin-top: 3%;
+	z-index: 10;
+	
+}
+
+#top-below {
+	background-color: #f8f8f8;
+	color: #26265e;
+}
+
+#about {
+	background-color: #e0e0e0;
+	color: #26265e;
+}
+
+#work {
+	background-color: #f8f8f8;
+	color: #26265e;
+}
+
+#jobs {
+	background-color: #e0e0e0;
+	color: #26265e;
+}
+
+#jobBottom {
+	background-color: #f8f8f8;
+	color: #26265e;
+}
+.reviewList {
+	height: 260px;
+	background-color: #f8f8f8;
+	border: 3px solid #26265e;
+	border-radius: 5%;
+}
+#reviewCar {
+	margin-top: -3%;
+}
+
+#reviews {
+	overflow-x: visible !important;
+}
+
+#reviews .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2326265e' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+#reviews .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2326265e' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+#est {
+	background-color: #26265e !important;
+	color: #f8f8f8 !important;
+}
+
+input[type=checkbox] {
+	transform: scale(0.75);
+}
+
+input[type=radio] {
+	transform: scale(0.75);
+}
+
+@media (min-width: 768px) {
+	/* CUSTOM WIDTHS */
+	.form-select.w-100 { 
+		width: auto!important;
+	}
+}
+
+#selSpace {
+	width: 1rem;
+}
+
+#estSubmit button {
+	background-color: #f8f8f8!important;
+	color: #26265e!important;
+}
+
+#estSubmit button:hover {
+	background-color: #e0e0e0!important;
+}
+
+#results {
+	color: #26265e!important;
+}
+
+.input-group-append button.btn {
+	background-color: #f8f8f8!important;
+	color: #26265e!important;
+}
+
+.input-group-append button.btn:hover {
+	background-color: #e0e0e0!important;
+	color: #26265e!important;
+}
+
+.contactImg img {
+	width: 5%;
+}
+
+#contact {
+	color: #26265e;
+	background-color: #f8f8f8;
+}
+
+#contactEmail img {
+	width: 7%!important;
+	margin-left: -1%;
+	margin-top: -0.5rem;
+}
+
+@media (max-width: 768px) {
+	.contactImg img {
+		width: 10%;
+	}
+	#contactEmail img {
+		width: 14%!important;
+		margin-left: -1%;
+		margin-top: -0.5rem;
+	}
+}
+
+#contactForm button {
+	background-color: white!important;
+	color: #26265e!important;
+	border: solid 2px #26265e;
+}
+
+#contactForm button:hover {
+	background-color: #e0e0e0!important;
+}
+
+#footer {
+	background-color: #26265e;
+	color: #f8f8f8;
+}
+
+#fbLink {
+	color: #f8f8f8;
+	text-decoration: none;
+}
+
+#fbLink:hover {
+	color: #e0e0e0;
+	text-decoration: none;
+}
+
+
+.footThumb {
+	width: 11%;
+}
+
+#resourceLinks a {
+	color: #f8f8f8;
+	display: block;
+	text-decoration: none;
+}
+
+#resourceLinks a:hover {
+	color: #e0e0e0;
+	display: block;
+	text-decoration: none;
+}
+
+#copyright {
+	font-size: 10px;
+}
+
+#disclaimer {
+	font-size: 10px;
+	display: block;
+	bottom: 0;
+}
+
+#estResContact {
+	color: #f8f8f8;
+}

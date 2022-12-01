@@ -1,0 +1,1075 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Commander Care</title>
+<link rel="icon" href="/images/icons/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</head>
+<body>
+ 
+  <nav class="navbar-nav sticky-top navbar-expand-lg shadow" id="header">
+    <div class="container-fluid row align-items-center">
+      <a class="navbar-brand align-self-center col-6 col-lg-2" href="#top">
+        <img src="/images/icons/logo.svg" alt="Commander Care" class="img-fluid">
+      </a>
+      <button id="burger" class="navbar-toggler col-6 align-self-center text-end" type="button" data-bs-toggle="collapse" data-bs-target="#headlist" aria-controls="headlist" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon py-4"></span>
+      </button>
+      <div id="headlist" class="collapse navbar-collapse col-12 col-md-9 float-end">
+        <div class="navbar nav ms-auto text-end text-lg-center w-100">
+          <a class="nav-link col-12 col-lg px-0" aria-current="page" href="#about">About Us</a>
+          <a class="nav-link col-12 col-lg px-0" aria-current="page" href="#work">What We Do</a>    
+          <a class="nav-link col-12 col-lg px-0" aria-current="page" href="#jobs">Our Work</a>
+          <a class="nav-link col-12 col-lg px-0" aria-current="page" href="#est">5 Minute Estimate</a> 
+          <a class="nav-link col-12 col-lg px-0" aria-current="page" href="#contact">Contact Us</a>  
+          <button id="cust" class="btn btn-light col-12 col-lg px-0" onClick="notDevd()" aria-current="page" type="button">Customer Portal</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container-fluid" id="top">
+    <div class="row">
+    	<div class="col-12 text-center gx-0 id="top1">
+	    <img class="col-10 col-md-8 mx-auto gx-0" id="top-img" alt="Work Pictures" src="/images/header/top.png">	
+   	</div>
+    	
+        <div class="col-1 col-md-2" id="top2-1">
+        
+        </div>
+        <div class="col-1 col-md-2 ms-auto" id="top2-2">
+        
+        </div>
+    </div>
+    <div class="row" id="top-below">
+    	<div class="col-12 text-center">
+				<br>
+    		<h3 class="h3">Commander Care Home Services</h3>
+    	  <br>
+			</div>
+    	<div class="col-12 text-center">
+    		<p class="h5 col-9 mx-auto">Providing quality service to the West Cleveland Area since 2019. Always know your job is in the hands of people who care with our satisfaction guarantee!</p>
+    	  <span><br></span>
+			</div>
+    </div>
+  </div>
+  
+  <div class="container-fluid min-vh-50" id="about">
+  	<div class="col-12 text-center">
+    		<h3 class="h3">About Us</h3>
+				<br>
+				<p class="h4 col-10 col-md-8 mx-auto">At Commander Care, we know how difficult it is to find reliable contractors at affordable prices.
+					That's why we dedicate ourselves to ensuring that every customer is left with exactly what they want.
+					With over 30 years of experience, we are family owned, operated, and oriented. Our staff is both knowledgeable
+					and versatile, with no project too big or small for us to take on. Whether you need your kitchen remodeled or
+					a lightbulb replaced, be sure to call the Commander, because we Care!</p>
+				</p>
+    		<br><br>
+    	</div>
+  </div>
+  
+  <div class="container-fluid" id="work">
+  	<div class="col-12 text-center">
+      <h3 class="h3">What We Do</h3>
+      <br>
+    </div>
+    <div class="row col-10 mx-auto">
+    	<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+    		<img src="/images/icons/carpentry.svg">
+    		<p class="h5 text-center">Carpentry</p>
+    	</div>
+    	<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+    		<img src="/images/icons/paint.svg">
+    		<p class="h5 text-center">Painting</p>
+    	</div>
+    	<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+    		<img src="/images/icons/tile.svg">
+    		<p class="h5 text-center">Tile</p>
+    	</div>
+    	<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+    		<img src="/images/icons/drywall.svg">
+    		<p class="h5 text-center">Drywall</p>
+    	</div>
+    </div>
+	  <span class="d-none d-md-block"><br><br></span>
+    <div class="row col-10 mx-auto">
+    	<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+    		<img src="/images/icons/install.svg">
+    		<p class="h5 text-center">Installation</p>
+    	</div>
+    	<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+    		<img src="/images/icons/remodeling.svg">
+    		<p class="h5 text-center">Remodeling</p>
+    	</div>
+    	<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+    		<img src="/images/icons/repair.svg">
+    		<p class="h5 text-center">Repair</p>
+    	</div>
+    	<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+    		<img src="/images/icons/refinish.svg">
+    		<p class="h5 text-center">Refinish</p>
+    	</div>
+    </div>
+		<br>
+  </div>
+  
+  <div class="container-fluid" id="jobs">
+  	<div class="col-12 text-center">
+  	  <h3 class="h3">Our Work</h3>
+	</div>
+	<br>
+ 	<div class="row">
+ 		<div class="carousel slide col-10 col-md-8 mx-auto jobImg" id="<%= folder[5] %>Pics" data-bs-interval="false">
+  <div class="carousel-inner rounded">
+		<% img[5].forEach(function(pic) { %>
+    <div class="carousel-item <%= (img[5].indexOf(pic) === 0) ? 'active' : '' %>">
+      <img class="d-block w-100 rounded" src="/images/work/<%= pic %>" alt="slide">
+    </div>
+		<% }); %>
+  <button type="button" class="carousel-control-prev" role="button" data-bs-target="#<%= folder[5] %>Pics" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button type="button" class="carousel-control-next" role="button" data-bs-target="#<%= folder[5] %>Pics" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div>
+ 	</div>
+
+	<%  folder.splice(5, 1);
+	    img.splice(5, 1);
+		  folder.forEach(function(cat) { %>
+					<div class="carousel slide col-10 col-md-8 mx-auto d-none jobImg" id="<%= cat %>Pics" data-bs-interval="false">
+			 <div class="carousel-inner rounded">
+				 <% img[0].forEach(function(pic) { %>
+				 <div class="carousel-item  <%= (img[0].indexOf(pic) === 0) ? 'active' : ''%>"">
+					 <img class="d-block w-100 rounded shadow-lg" src="/images/work/<%= pic %>" alt="slide">
+				 </div>
+				 <% }); 
+				    img.shift() %>
+			 <button type="button" class="carousel-control-prev" role="button" data-bs-target="#<%= cat %>Pics" data-bs-slide="prev">
+				 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			 </button>
+			 <button type="button" class="carousel-control-next" role="button" data-bs-target="#<%= cat %>Pics" data-bs-slide="next">
+				 <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			 </button>
+		 </div>
+				</div>
+				<% }); %> 
+			</div>
+			<br>
+			<select class="form-select w-100 mx-auto shadow-sm" id="carouselSelect" aria-label="Category">
+				<option value="Car">Carpentry</option>
+				<option value="Pai">Painting</option>
+				<option value="Til">Tile</option>
+				<option value="Dry">Drywall</option>
+				<option value="Ins">Install</option>
+				<option value="Rem" selected>Remodel</option>
+				<option value="Rep">Repair</option>
+				<option value="Ref">Refinish</option>
+			</select>
+  	<br>
+  	<div class="row">
+  		<div class="col-12 text-center">
+  			<p class="h5">Not Convinced? See What Our Customers Have to Say:</p>
+  		</div>
+		<span><br><br></span>
+  	</div>
+  	<div class="row" id="jobBottom">
+  		<div class="col-12 mx-auto">
+  			<div class="well">
+  				<div id="reviews" class="carousel slide col-12 mx-auto" data-bs-interval="false">
+  					<div class="carousel-inner" id="reviewCar">
+  						<div class="carousel-item active">
+  							<div class="row col-10 mx-auto">
+  								<div class="col-6 col-md-3 gx-2 gx-md-5">
+  									<div class="reviewList shadow">
+  										<div class="row col-11 mx-auto">
+  											<img class="img-fluid py-2" src="/images/icons/5star.svg" alt="5/5 Stars">
+  										</div>
+  										<div class="row">
+  											<div class="col-10 mx-auto">
+  												<p class="h6">On-time, knowledgeable, respectful and understanding </p>
+  											</div>
+										</div>
+ 										<div class="row">
+ 										  <div class="col-11 position-absolute bottom-0 pb-3">
+ 										  	 <p class="h3 d-lg-none">&nbsp;-Glen H.</p>
+<p class="h4 d-none d-lg-block">&nbsp;-Glen H.</p>
+ 										  </div>
+  										</div>
+  									</div>
+  								</div>
+  								<div class="col-6 col-md-3 gx-2 gx-md-5 mx-auto">
+  									<div class="reviewList shadow">
+  										<div class="row col-11 mx-auto">
+  											<img class="img-fluid py-2" src="/images/icons/5star.svg" alt="5/5 Stars">
+  										</div>
+  										<div class="row">
+  											<div class="col-10 mx-auto">
+  												<p class="h6">They painted my cabinets and installed a backsplash. They look like new.. 24 years old. </p>
+  											</div>
+										</div>
+ 										<div class="row">
+ 										  <div class="col-11 position-absolute bottom-0 pb-3">
+ 										  	 <p class="h3 d-lg-none">&nbsp;-Sheila M.</p>
+<p class="h4 d-none d-lg-block">&nbsp;-Sheila  M.</p>
+ 										  </div>
+  										</div>
+  									</div>
+  								</div>
+  								<div class="col-6 col-md-3 d-none d-md-block gx-5 align-self-end">
+  									<div class="reviewList shadow">
+  										<div class="row col-11 mx-auto">
+  											<img class="img-fluid py-2" src="/images/icons/5star.svg" alt="5/5 Stars">
+  										</div>
+  										<div class="row">
+  											<div class="col-10 mx-auto">
+  												<p class="h6">They answered all my questions about this project and others. I highly recommend and will be hiring again soon. </p>
+  											</div>
+										</div>
+ 										<div class="row">
+ 										  <div class="col-11 position-absolute bottom-0 pb-3">
+ 										  	 <p class="h3 d-lg-none">&nbsp;-Sarah R.</p>
+<p class="h4 d-none d-lg-block">&nbsp;-Sarah R.</p>
+ 										  </div>
+  										</div>
+  									</div>
+  								</div>
+  							</div>
+  						</div>
+  						<div class="carousel-item">
+  							<div class="row col-10 mx-auto">
+  								<div class="col-6 col-md-3 gx-2 gx-md-5">
+  									<div class="reviewList shadow">
+  										<div class="row col-11 mx-auto">
+  											<img class="img-fluid py-2" src="/images/icons/5star.svg" alt="5/5 Stars">
+  										</div>
+  										<div class="row">
+  											<div class="col-10 mx-auto">
+  												<p class="h6">Their attention to detail, deadlines, planning, and execution are far superior to other contractors I've worked with.</p>
+  											</div>
+										</div>
+ 										<div class="row">
+ 										  <div class="col-11 position-absolute bottom-0 pb-3">
+ 										  	 <p class="h3 d-lg-none">&nbsp;-Justin M.</p>
+<p class="h4 d-none d-lg-block">&nbsp;-Justin M.</p>
+ 										  </div>
+  										</div>
+  									</div>
+  								</div>
+  								<div class="col-6 col-md-3 gx-2 gx-md-5 mx-auto">
+  									<div class="reviewList shadow">
+  										<div class="row col-11 mx-auto">
+  											<img class="img-fluid py-2" src="/images/icons/5star.svg" alt="5/5 Stars">
+  										</div>
+  										<div class="row">
+  											<div class="col-10 mx-auto">
+  												<p class="h6">Great experience. Speedy service! Would hire again.</p>
+  											</div>
+										</div>
+ 										<div class="row">
+ 										  <div class="col-11 position-absolute bottom-0 pb-3">
+ 										  	 <p class="h3 d-lg-none">&nbsp;-Ben K.</p>
+<p class="h4 d-none d-lg-block">&nbsp;-Ben K.</p>
+ 										  </div>
+  										</div>
+  									</div>
+  								</div>
+  								<div class="col-6 col-md-3 d-none d-md-block gx-5 align-self-end">
+  									<div class="reviewList shadow">
+  										<div class="row col-11 mx-auto">
+  											<img class="img-fluid py-2" src="/images/icons/5star.svg" alt="5/5 Stars">
+  										</div>
+  										<div class="row">
+  											<div class="col-10 mx-auto">
+  												<p class="h6">I am very pleased with my kitcen. It looks beautiful. I am glad I got to hire them.</p>
+  											</div>
+										</div>
+ 										<div class="row">
+ 										  <div class="col-11 position-absolute bottom-0 pb-3">
+ 										  	 <p class="h3 d-lg-none">&nbsp;-Sherry M.</p>
+<p class="h4 d-none d-lg-block">&nbsp;-Sherry M.</p>
+ 										  </div>
+  										</div>
+  									</div>
+  								</div>
+  							</div>
+  						</div>
+							<div class="carousel-item">
+  							<div class="row col-10 mx-auto">
+  								<div class="col-6 col-md-3 gx-2 gx-md-5">
+  									<div class="reviewList shadow">
+  										<div class="row col-11 mx-auto">
+  											<img class="img-fluid py-2" src="/images/icons/5star.svg" alt="5/5 Stars">
+  										</div>
+  										<div class="row">
+  											<div class="col-10 mx-auto">
+  												<p class="h6">They were very professional and very kind while they worked. They got the work done very efficiently.</p>
+  											</div>
+										</div>
+ 										<div class="row">
+ 										  <div class="col-11 position-absolute bottom-0 pb-3">
+ 										  	 <p class="h3 d-lg-none">&nbsp;-Leslie C.</p>
+<p class="h4 d-none d-lg-block">&nbsp;-Leslie C.</p>
+ 										  </div>
+  										</div>
+  									</div>
+  								</div>
+  								<div class="col-6 col-md-3 gx-2 gx-md-5 mx-auto">
+  									<div class="reviewList shadow">
+  										<div class="row col-11 mx-auto">
+  											<img class="img-fluid py-2" src="/images/icons/5star.svg" alt="5/5 Stars">
+  										</div>
+  										<div class="row">
+  											<div class="col-10 mx-auto">
+  												<p class="h6">Did a great job very informative will hire them again.</p>
+  											</div>
+										</div>
+ 										<div class="row">
+ 										  <div class="col-11 position-absolute bottom-0 pb-3">
+ 										  	 <p class="h3 d-lg-none">&nbsp;-Steve A.</p>
+<p class="h4 d-none d-lg-block">&nbsp;-Steve A.</p>
+ 										  </div>
+  										</div>
+  									</div>
+  								</div>
+  								<div class="col-6 col-md-3 d-none d-md-block gx-5 align-self-end">
+  									<div class="reviewList shadow">
+  										<div class="row col-11 mx-auto">
+  											<img class="img-fluid py-2" src="/images/icons/5star.svg" alt="5/5 Stars">
+  										</div>
+  										<div class="row">
+  											<div class="col-10 mx-auto">
+  												<p class="h6">Very responsive, professional and friendly. </p>
+  											</div>
+										</div>
+ 										<div class="row">
+ 										  <div class="col-11 position-absolute bottom-0 pb-3">
+ 										  	 <p class="h3 d-lg-none">&nbsp;-Tricia T.</p>
+<p class="h4 d-none d-lg-block">&nbsp;-Tricia T.</p>
+ 										  </div>
+  										</div>
+  									</div>
+  								</div>
+  							</div>
+  						</div>
+  						<button id="rPrev" type="button" class="carousel-control-prev" role="button" data-bs-target="#reviews" data-bs-slide="prev">
+    						<span  class="carousel-control-prev-icon" aria-hidden="true"></span>
+  						</button>
+  						<button id="rNext" type="button" class="carousel-control-next" role="button" data-bs-target="#reviews" data-bs-slide="next">
+  						  <span  class="carousel-control-next-icon" aria-hidden="true"></span>
+					    </button>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	<span><br><br></span>	
+  	</div>
+  	
+  </div>
+  
+  <div class="container-fluid min-vh-100" id="est">
+  	<div class="col-12 text-center">
+  		<p class="h3">5 Minute Estimate</p>
+  	</div>
+  	<br>
+  	<div class="col-10 col-md-6 mx-auto h5 text-center">
+  		
+  			Know exactly what you want? Have all of your measurements?
+Our 5 Minute Estimate process can give you an idea of how
+affordable your project could be*
+  		
+  	</div>
+		<div class="text-center d-block mb-0" id="disclaimer"><span>*Estimated cost is not a guarantee and is subject to change during survey and invoice process</span></div>  
+  	<br><br>
+  	<div class="row">
+  		<div class="col-12 col-md-6" id="estimator">
+  		  <p class="h3">1. Select Job Type</p>
+  		  <form id="estForm" class="row g-2">
+  		  	<select class="form-select w-100 d-inline-block" id="Category" aria-label="Job Category">
+  		  		<option selected>Category</option>
+  		  		<option value="Carpentry">Carpentry</option>
+  		  		<option value="Painting">Painting</option>
+  		  		<option value="Tile">Tile</option>
+  		  		<option value="Drywall">Drywall</option>
+  		  		<option value="Installation">Installation</option>
+  		  		<option value="Remodeling">Remodeling</option>
+  		  		<option value="Repair">Repair</option>
+  		  		<option value="Refinish">Refinish</option>
+  		  	</select>
+  		  	<div class="d-none d-md-inline-block" id="selSpace">&nbsp;&nbsp;</div>
+  		  	<select class="form-select w-100 d-none jobType" id="Carpentry-JobSelect" aria-label="Job Type">
+  		  		<option selected>Type</option>
+  		  		<option value="Baseboard">Baseboard</option>
+  		  		<option value="QuarterRound">Quarter Round</option>
+  		  		<option value="Crown">Crown</option>
+  		  	</select>
+  		  	
+  		  	<select class="form-select w-100 d-none jobType" id="Painting-JobSelect" aria-label="Job Type">
+  		  		<option selected>Type</option>
+  		  		<option value="WallPaint">Walls</option>
+  		  		<option value="CeilingPaint">Ceiling</option>
+  		  		<option value="TrimPaint">Trim</option>
+  		  	</select>
+  		  	
+  		  	<select class="form-select w-100 d-none jobType" id="Tile-JobSelect" aria-label="Job Type">
+  		  		<option selected>Type</option>
+  		  		<option value="TileFloor">Floor</option>
+  		  		<option value="Backsplash">Backsplash</option>
+  		  		<option value="TileShower">Shower</option>
+  		  	</select>
+  		  	
+  		  	<select class="form-select w-100 d-none jobType" id="Drywall-JobSelect" aria-label="Job Type">
+  		  		<option selected>Type</option>
+  		  		<option value="DrywallReplace">Replace</option>
+  		  		<option value="DrywallRemove">Remove</option>
+  		  		<option value="DrywallFinish">Finish</option>
+  		  	</select>
+  		  	
+  		  	
+  		  	<select class="form-select w-100 d-none jobType" id="Installation-JobSelect" aria-label="Job Type">
+  		  		<option selected>Type</option>
+  		  		<option value="FloorInstall">Floor</option>
+  		  		<option value="CabinetInstall">Cabinets</option>
+  		  		<option value="ShelfInstall">Shelves</option>
+  		  		<option value="Appliances">Appliances</option>
+  		  		<option value="ElectricalInstall">Electrical</option>
+  		  		<option value="LightFixtureInstall">Light Fixtures</option>
+  		  	</select>
+  		  	
+  		  	<select class="form-select w-100 d-none jobType" id="Remodeling-JobSelect" aria-label="Job Type">
+  		  		<option selected>Type</option>
+  		  		<option value="KitchenRemodel">Kitchen</option>
+  		  		<option value="BathroomRemodel">Bathroom</option>
+  		  	</select>
+  		  	
+  		  	<select class="form-select w-100 d-none jobType" id="Repair-JobSelect" aria-label="Job Type">
+  		  		<option selected>Type</option>
+  		  		<option value="DeckRepair">Deck Repair</option>
+  		  		<option value="FloorRepair">Floor Repair</option>
+  		  		<option value="WallRepair">Wall Repair</option>
+  		  	</select>
+  		  	
+  		  	<select class="form-select w-100 d-none jobType" id="Refinish-JobSelect" aria-label="Job Type">
+  		  		<option selected>Type</option>
+  		  		<option value="CabinetRefinish">Cabinets</option>
+  		  		<option value="DeckRefinish">Deck</option>
+  		  		<option value="StairRefinish">Stairs</option>
+  		  	</select>
+  		  	
+  		  	<fieldset id="step-2" class="d-none">
+  		  		<p class="h3">2. Enter Job Size</p>
+  		  		<div class="input-group s2 bu Baseboard QuarterRound Crown TrimPaint CabinetInstall ShelfInstall CabinetRefinish d-none">
+  		  		  <input type="number" class="form-control" aria-label="Linear Feet">
+  		  		  <span class="input-group-text">linear ft</span>
+				</div>
+	  	    
+		  	    <div class="input-group s2 bu WallPaint CeilingPaint TileFloor Backsplash TileShower DrywallReplace DrywallRemove DrywallFinish FloorInstall KitchenRemodel BathroomRemodel FloorRepair WallRepair DeckRepair DeckRefinish StairRefinish d-none">
+  		  		  <input type="number" class="form-control" aria-label="Square Feet">
+  		  		  <span class="input-group-text">sq ft</span>
+				</div>
+		  	    
+		  	    <div class="input-group s2 bu LightFixtureInstall Microwave Laundry Dishwasher CeilingFan Toilet Oven OvenHood Tv Sink KitchenFaucet BathroomFaucet Appliances d-none">
+  		  		  <input id="numItems" type="number" class="form-control" aria-label="Number of Items">
+  		  		  <span class="input-group-text">number of items</span>
+				</div>
+		  	
+		  	    <div class="input-group bu ElectricalInstall d-none s2">
+  		  		  <input type="number" class="form-control" aria-label="Number of Outlets">
+  		  		  <span class="input-group-text">number of outlets</span>
+				    </div>
+
+						<span class="d-none type" id="applianceBR"><br></span>  
+
+ 		  	 	  <select class="form-select w-100 d-none type Appliances s2" aria-label="Appliance Type">
+							<option value="0" selected>Type</option>
+							<option value="microwave">Microwave</option>
+							<option value="laundry">Laundry</option>
+							<option value="dishwasher">Dishwasher</option>
+							<option value="ceiling fan">Ceiling Fan</option>
+							<option value="toilet">Toilet</option>
+							<option value="oven">Oven</option>
+							<option value="ovenHood">Oven Hood</option>
+							<option value="TV">TV</option>
+							<option value="sink">Sink</option>
+							<option value="kitchen faucet">Kitchen Faucet</option>
+							<option value="bathroom faucet">Bathroom Faucet</option>
+  		  	  </select>
+  		  	</fieldset>
+  		  	
+  		  	<fieldset id="step-3" class="row d-none">
+  		  	    <p class="h3 row" id="ApplianceExcept">3. We Just Need a Few More Specifics....</p>	
+  		  	
+  		  	    <div class="field form-check bm1u Baseboard QuarterRound Crown DrywallFinish KitchenRemodel BathroomRemodel d-none">
+  		  	    	<input class="form-check-input" type="checkbox" value="0" id="paint">
+                    <label class="form-check-label" for="paint">
+                      Painting Required
+                    </label> 		  	    	
+  		  	    </div>
+  		  	
+  		  	    <select class="field form-select w-100 bm1u TrimPaint d-none" aria-label="Trim Color">
+  		  	    	<option selected>Current Trim Color</option>
+  		  	    	<option value="0">White</option>
+  		  	    	<option value="1">Brown</option>
+  		  	    </select>
+  		  	    
+  		  	    <div class="form-check bm1u TileFloor TileShower d-none field">
+  		  	    	<input class="form-check-input" type="checkbox" value="0" id="sizeP1">
+                    <label class="form-check-label" for="sizeP1">
+                      A Single Tile is Less than 0.5 sq ft
+                    </label> 		  	    	
+  		  	    </div>
+  		  	    
+  		  	    <div class="form-check bm1u Backsplash d-none field">
+  		  	    	<input class="form-check-input" type="checkbox" value="0" id="sizeP2">
+                    <label class="form-check-label" for="sizeP2">
+                      A Single Tile is Less than 0.25 sq ft
+                    </label> 		  	    	
+  		  	    </div>
+  		  	    
+  		  	    <div class="CabinetInstall d-none field">
+  		  	        Crown Installation
+								<div class="form-check pl-2">
+  		  	    		<input class="form-check-input CabinetInstall bm1u" type="radio" name="crownType" id="cabCrown1" value="0">
+  		  	    		<label class="form-check-label" for="cabCrown1">One Piece</label>
+  		  	      </div>
+								<div class="form-check pl-2">	
+									<input class="form-check-input CabinetInstall bm2u" type="radio" name="crownType" id="cabCrown2" value="0">
+  		  	    		<label class="form-check-label" for="cabCrown2">Two Piece</label>
+  		  	    	</div>
+								<div class="form-check pl-2">
+									<input class="form-check-input" type="radio" name="crownType" id="cabCrown3" value="0">
+  		  	    		<label class="form-check-label" for="cabCrown3">None</label>
+  		  	      </div>
+							</div>
+
+							<div class="DeckRefinish d-none field">
+								Type of Finish
+								<div class="form-check pl-2">
+									<input class="form-check-input DeckRefinish bm1u" type="radio" name="stain" id="deckRe1" value="0">
+									<label class="form-check-label" for="deckRe1">Stain</label>
+								</div>
+								<div class="form-check pl-2">	
+									<input class="form-check-input DeckRefinish bm2u" type="radio" name="seal" id="deckRe2" value="0">
+									<label class="form-check-label" for="deckRe2">Seal</label>
+								</div>
+						  </div>
+  		  	    
+  		  	    <select class="form-select w-100 bm1u ShelfInstall d-none field" aria-label="Shelf Type">
+  		  	    	<option selected>Shelf Type</option>
+  		  	    	<option value="0">Standard</option>
+  		  	    	<option value="1">Custom Built</option>
+  		  	    </select>
+  		  	    
+  		  	    <select class="form-select w-100 bm1u LightFixtureInstall d-none field" aria-label="Light Fixture Type">
+  		  	    	<option selected>Installation Type</option>
+  		  	    	<option value="1">New Location</option>
+  		  	    	<option value="0">Replace Exisiting</option>
+  		  	    </select>
+  		  	    
+  		  	    <select class="form-select w-100 bm1u WallRepair d-none field" aria-label="Wall Type">
+  		  	    	<option selected>Wall Type</option>
+  		  	    	<option value="0">Drywall</option>
+  		  	    	<option value="1">Wood</option>
+  		  	    </select>
+  		  	    
+  		  	    <div class="form-check bm1u DeckRepair d-none field">
+  		  	    	<input class="form-check-input" type="checkbox" value="0" id="otherD">
+                    <label class="form-check-label" for="otherD">
+                      I Need More than Board Replacement
+                    </label> 		  	    	
+  		  	    </div>
+  		  	    
+  		  	    <select class="form-select w-100 bm1u StairRefinish d-none field" aria-label="Refinish Type">
+  		  	    	<option selected>Refinish Area</option>
+  		  	    	<option value="1">Full Stair</option>
+  		  	    	<option value="0">Only Stair Tops</option>
+  		  	    </select>
+  		  	    
+  		  	    <div class="FloorInstall d-none field">
+  		  	        Floor Type
+  		  	    	<div class="form-check pl-2">
+									<input class="form-check-input FloorInstall bm1u" type="radio" name="floor" id="floor1" value="0">
+  		  	    		<label class="form-check-label" for="floor1">Vinyl Plank</label>
+  		  	    	</div>
+								<div class="form-check pl-2">
+									<input class="form-check-input FloorInstall bm2u" type="radio" name="floor" id="floor2" value="0">
+  		  	    		<label class="form-check-label" for="floor2">Hardwood</label>
+  		  	      </div>
+								<div class="form-check pl-2">
+									<input class="form-check-input FloorInstall bm3u" type="radio" name="floor" id="floor3" value="0">
+  		  	    		<label class="form-check-label" for="floor3">Engineered Wood</label>
+								</div>
+							</div>
+  		  	    
+  		  	     <div class="BathroomRemodel KitchenRemodel d-none field">
+  		  	        Floor Installation Type
+  		  	    	<div class="form-check pl-2">
+									<input class="form-check-input BathroomRemodel KitchenRemodel bm2u" type="radio" name="floor_2" id="floor4" value="0">
+  		  	    		<label class="form-check-label" for="floor4">Vinyl Plank</label>
+  		  	    	</div>
+								<div class="form-check pl-2">	
+									<input class="form-check-input BathroomRemodel KitchenRemodel bm3u" type="radio" name="floor_2" id="floor5" value="0">
+  			  	    	<label class="form-check-label" for="floor5">Hardwood</label>
+								</div>
+								<div class="form-check pl-2">	
+									<input class="form-check-input BathroomRemodel KitchenRemodel bm4u" type="radio" name="floor_2" id="floor6" value="0">
+  			  	    	<label class="form-check-label" for="floor6">Engineered Wood</label>
+								</div>
+								<div class="form-check pl-2">	
+									<input class="form-check-input" type="radio" name="floor_2" id="floor7" value="0">
+  			  	    	<label class="form-check-label" for="floor7">None</label>
+								</div>
+							</div>
+  		  	    
+  		  	    <div class="FloorRepair d-none field">
+  		  	        Floor Type
+  		  	    	<div class="form-check pl-2">
+									<input class="form-check-input FloorRepair bm1u" type="radio" name="floor_3" id="floor8" value="0">
+	  		  	    	<label class="form-check-label" for="floor8">Vinyl Plank</label>
+								</div>
+								<div class="form-check pl-2">
+									<input class="form-check-input FloorRepair bm2u" type="radio" name="floor_3" id="floor9" value="0">
+  			  	    	<label class="form-check-label" for="floor9">Hardwood</label>
+								</div>
+								<div class="form-check pl-2">
+									<input class="form-check-input FloorRepair bm3u" type="radio" name="floor_3" id="floor10" value="0">
+  			  	    	<label class="form-check-label" for="floor10">Engineered Wood</label>
+								</div>
+								<div class="form-check pl-2">	
+									<input class="form-check-input FloorRepair bm4u" type="radio" name="floor_3" id="floor11" value="0">
+  			  	    	<label class="form-check-label" for="floor11">Tile</label>
+								</div>
+							</div>
+  		  	    
+  		  	     <div class="form-check bm2u Baseboard QuarterRound Crown d-none field">
+  		  	    	<input class="form-check-input" type="checkbox" value="0" id="caulk">
+                    <label class="form-check-label" for="caulk">
+                      Caulking Required
+                    </label> 		  	    	
+  		  	    </div>
+  		  	    
+  		  	     <div class="TileFloor FloorInstall d-none field">
+  		  	        Type of Existing Floor to Remove
+  		  	    	<div class="form-check pl-2">
+									<input class="form-check-input TileFloor FloorInstall bm4u" type="radio" name="floor_r" id="floorR1" value="0">
+  			  	    	<label class="form-check-label" for="floorR1">Tile</label>
+								</div>
+								<div class="form-check pl-2">
+									<input class="form-check-input TileFloor FloorInstall bm5u" type="radio" name="floor_r" id="floorR2" value="0">
+  			  	    	<label class="form-check-label" for="floorR2">Other</label>
+								</div>
+								<div class="form-check pl-2">
+									<input class="form-check-input" type="radio" name="floor_r" id="floorR3" value="0">
+  			  	    	<label class="form-check-label" for="floorR3">None</label>
+								</div>
+							</div>
+  		  	    
+  		  	    <div class="form-check bm2u Backsplash d-none field">
+  		  	    	<input class="form-check-input" type="checkbox" value="0" id="bsdemo">
+                    <label class="form-check-label" for="bsdemo">
+                      Existing Backsplash Removal Required
+                    </label> 		  	    	
+  		  	    </div>
+  		  	    
+  		  	    <select class="form-select w-100 bm2u DrywallReplace d-none field" aria-label="Replace Type">
+  		  	    	<option selected>Work Required</option>
+  		  	    	<option value="0">Installation Only</option>
+  		  	    	<option value="1">Installation and Finishing</option>
+  		  	    </select>
+  		  	    
+  		  	    <div class="form-check bm2u WallRepair d-none field">
+  		  	    	<input class="form-check-input" type="checkbox" value="0" id="wpaper">
+                    <label class="form-check-label" for="wpaper">
+                      Wall Finish is Wallpaper
+                    </label> 		  	    	
+  		  	    </div>
+  		  	    
+  		  	    <select class="form-select w-100 bm3u Crown d-none field" aria-label="Crown Type">
+  		  	    	<option selected>Crown Type</option>
+  		  	    	<option value="0">One Piece</option>
+  		  	    	<option value="1">Two Piece</option>
+  		  	    	<option value="2">Three Piece</option>
+  		  	    </select>
+  		  	    
+  		  	    <div class="form-check bm3u CabinetInstall d-none field">
+  		  	    	<input class="form-check-input" type="checkbox" value="0" id="cdemo">
+                    <label class="form-check-label" for="cdemo">
+                      Removal of Current Cabinets Required
+                    </label> 		  	    	
+  		  	    </div>
+  		  	    
+  		  	    <div class="form-check bm5u KitchenRemodel d-none field">
+  		  	    	<input class="form-check-input" type="checkbox" value="0" id="cter">
+                    <label class="form-check-label" for="cter">
+                      Counter Installation Required (excluding Hard Sufaces)
+                    </label> 		  	    	
+  		  	    </div>
+  		  	    
+  		  	    <div class="form-check bm6u KitchenRemodel d-none field">
+  		  	    	<input class="form-check-input" type="checkbox" value="0" id="cabR">
+                    <label class="form-check-label" for="cabR">
+                      Cabinet Replacement Required
+                    </label> 		  	    	
+  		  	    </div>
+  		  	    
+  		  	     <div class="input-group row gy-1 su WallPaint DrywallRemove DrywallFinish WallRepair d-none field">
+  		  	    	<input class="form-control col-4 col-md-2" type="number" value="0" id="wallC">
+                    <label class="form-label col-8 col-md-10 my-auto" for="wallC">
+                      Number of Walls
+                    </label> 		  	    	
+  		  	    </div>
+
+							<div class="input-group row gy-1 bm1u DrywallReplace d-none field">
+  		  	    	<input class="form-control col-4 col-md-2" type="number" value="0" id="wallC2">
+                    <label class="form-label col-8 col-md-10 my-auto" for="wallC2">
+                      Number of Walls
+                    </label> 		  	    	
+  		  	    </div>
+  		  	    
+  		  	    <div class="input-group row gy-1 su CeilingPaint d-none field">
+  		  	    	<input class="form-control col-4 col-md-2" type="number" value="0" id="ceilC">
+                    <label class="form-label col-8 col-md-10 my-auto" for="ceilC">
+                      Number of Rooms
+                    </label> 		  	    	
+  		  	    </div>
+  		  	    
+  		  	    <div class="input-group row gy-1 su TrimPaint d-none field">
+  		  	    	<input class="form-control col-4 col-md-2" type="number" value="0" id="windC">
+                    <label class="form-label col-8 col-md-10 my-auto" for="windC">
+                      Number of Windows
+                    </label> 		  	    	
+  		  	    </div>
+  		  	    
+  		  	    <div class="input-group row gy-1 TileShower d-none field">
+  		  	    	<input class="form-control col-4 col-md-2" type="number" value="0" id="surfC">
+                    <label class="form-label col-8 col-md-10 my-auto" for="surfC">
+                      Number of Surfaces (ex: a standard square shower would have 5 surfaces)
+					</label>
+  		  	    </div>
+  		  	    
+  		  	    <div class="input-group row gy-1 su FloorInstall StairRefinish d-none field">
+  		  	    	<input class="form-control col-4 col-md-2" type="number" value="0" id="stairC">
+                    <label class="form-label col-8 col-md-10 my-auto" for="stairC">
+                      Number of Stairs
+					</label>
+  		  	    </div>
+  		  	    
+  		  	    <div class="input-group row gy-1 su ShelfInstall d-none field">
+  		  	    	<input class="form-control col-4 col-md-2" type="number" value="0" id="shelfC">
+                    <label class="form-label col-8 col-md-10 my-auto" for="shelfC">
+                      Number of Shelves
+					</label>
+  		  	    </div>
+  		  	    
+  		  	    <div class="input-group row gy-1 su ElectricalInstall d-none field">
+  		  	    	<input class="form-control col-4 col-md-2" type="number" value="0" id="switchC">
+                    <label class="form-label col-8 col-md-10 my-auto" for="switchC">
+                      Number of Light Switches
+					</label>
+  		  	    </div>
+  		  	    
+  		  	    <div class="input-group row gy-1 su KitchenRemodel CabinetRefinish d-none field">
+  		  	    	<input class="form-control col-4 col-md-2" type="number" value="0" id="faceC">
+                    <label class="form-label col-8 col-md-10 my-auto" for="faceC">
+                      Number of Cabinet Doors <span class="KitchenRemodel d-none">(0 if replacing)</span>
+					</label>
+  		  	    </div>
+  		  	    
+  		  	    <div class="input-group row gy-1 su DeckRepair d-none field">
+  		  	    	<input class="form-control col-4 col-md-2" type="number" value="0" id="deckC">
+                    <label class="form-label col-8 col-md-10 my-auto" for="deckC">
+                      Number of Deck Boards to Replace
+					</label>
+  		  	    </div>
+  		  	    
+  		  	    <div class="input-group row gy-1 tu TrimPaint d-none field">
+  		  	    	<input class="form-control col-4 col-md-2" type="number" value="0" id="doorC">
+                    <label class="form-label col-8 col-md-10 my-auto" for="doorC">
+                      Number of Doors (only if painting full door, not just trim)
+					</label>
+  		  	    </div>
+  		  	    
+  		  	    <div class="input-group row gy-1 tu KitchenRemodel d-none field">
+  		  	    	<input class="form-control col-4 col-md-2" type="number" value="0" id="wallRC">
+                    <label class="form-label col-8 col-md-10 my-auto" for="wallRC">
+                      Number of Walls to Remove
+					</label>
+  		  	    </div>
+  		  	    
+  		  	     <select id="BathroomSU" class="form-select w-100 smu BathroomRemodel d-none field" aria-label="Vanity Work Type">
+  		  	    	<option value="-1" selected>Vanity Work Required</option>
+  		  	    	<option value="1">Replace</option>
+  		  	    	<option value="0">Repaint</option>
+  		  	    	<option value="-2">None</option>
+  		  	    </select>
+  		  	    
+  		  	    <select id="ElectricSU" class="form-select w-100 tmu ElectricalInstall d-none field" aria-label="Bath Fan Type">
+  		  	    	<option value="-1" selected>Bath Fan Installation</option>
+  		  	    	<option value="1">New Location</option>
+  		  	    	<option value="0">Replace Existing</option>
+  		  	    	<option value="-2">None</option>
+  		  	    </select>
+  		  	    
+  		  	    <select id="BathroomTU" class="form-select w-100 tmu BathroomRemodel d-none field" aria-label="Bath Fan Type">
+  		  	    	<option value="-1" selected>Bath/Shower Installation</option>
+  		  	    	<option value="1">Custom</option>
+  		  	    	<option value="0">Standard</option>
+  		  	    	<option value="-2">None</option>
+  		  	    </select>
+  		  	    
+  		  	    <div class="input-group row gy-1 fu KitchenRemodel d-none field">
+  		  	    	<input class="form-control col-4 col-md-2" type="number" value="0" id="wallIC">
+                    <label class="form-label col-8 col-md-10 my-auto" for="wallIC">
+                      Number of Walls to Install
+					</label>
+  		  	    </div>
+  		  	    
+  		  	    <div class="form-check fu BathroomRemodel d-none field">
+  		  	    	<input class="form-check-input" type="checkbox" value="0" id="toilt">
+                    <label class="form-check-label" for="toilt">
+                      Toilet Installation Required
+                    </label> 		  	    	
+  		  	    </div>
+  		  	    
+  		  	    <div class="form-check cu KitchenRemodel d-none field">
+  		  	    	<input class="form-check-input" type="checkbox" value="0" id="elctrc">
+                    <label class="form-check-label" for="elctrc">
+                      Electrical Work Required
+                    </label> 		  	    	
+  		  	    </div>
+  		  	    
+  		  	    <select class="form-select w-100 cu FloorInstall d-none field" aria-label="Floor Brand">
+  		  	    	<option selected>Store Purchased From</option>
+  		  	    	<option value="0">Lowes</option>
+  		  	    	<option value="0">Home Depot</option>
+  		  	    	<option value="1">Lumber Liquidators</option>
+  		  	    	<option value="0">Other</option>>
+  		  	    </select>
+  		  	    <span><br></span>
+  		  	</fieldset>
+  		  	
+					<div class="row d-none" id="estSubmit">
+						<button type="button" class="btn gy-1 col-12 col-md-6 ms-0" onClick="generateEst()">Get Your Estimate</button>
+					</div>
+
+  		  	<fieldset id="invisifields" class="d-none">
+  		  		<input type="text" id="cFanMulti" readonly class="CeilingFan Appliances bm1u" value="0">
+  		  		<input type="text"  readonly class="Baseboard type" value="baseboard">
+  		  		<input type="text"  readonly class="QuarterRound type" value="quarter round">
+  		  		<input type="text"  readonly class="Crown type" value="crown">
+  		  		<input type="text"  readonly class="WallPaint type" value="wall paint">
+  		  		<input type="text"  readonly class="CeilingPaint type" value="ceiling paint">
+  		  		<input type="text"  readonly class="TrimPaint type" value="trim paint">
+  		  		<input type="text"  readonly class="TileFloor type" value="tile floor">
+  		  		<input type="text"  readonly class="Backsplash type" value="backsplash">
+  		  		<input type="text"  readonly class="TileShower type" value="tile shower">
+  		  		<input type="text"  readonly class="DrywallReplace type" value="drywall replace">
+  		  		<input type="text"  readonly class="DrywallRemove type" value="drywall remove">
+  		  		<input type="text"  readonly class="DrywallFinish type" value="drywall finish">
+  		  		<input type="text"  readonly class="FloorInstall type" value="floor install">
+  		  		<input type="text"  readonly class="CabinetInstall type" value="cabinet install">
+  		  		<input type="text"  readonly class="ShelfInstall type" value="shelf install">
+  		  		<input type="text"  readonly class="ElectricalInstall type" value="electrical install">
+  		  		<input type="text"  readonly class="LightFixtureInstall type" value="light fixture install">
+  		  		<input type="text"  readonly class="KitchenRemodel type" value="kitchen remodel">
+  		  		<input type="text"  readonly class="BathroomRemodel type" value="bathroom remodel">
+  		  		<input type="text"  readonly class="FloorRepair type" value="floor repair">
+  		  		<input type="text"  readonly class="WallRepair type" value="wall repair">
+  		  		<input type="text"  readonly class="DeckRepair type" value="deck repair">
+  		  		<input type="text"  readonly class="CabinetRefinish type" value="cabinet refinish">
+  		  		<input type="text"  readonly class="DeckRefinish type" value="deck refinish">
+  		  		<input type="text"  readonly class="StairRefinish type" value="stair refinish">
+  		  		<input type="number" id="BRSU" readonly class="BathroomRemodel su" value="0">
+  		  		<input type="number"  id="BRTU" readonly class="BathroomRemodel tu" value="0">
+  		  		<input type="number"  id="EITU" readonly class="ElectricalInstall tu" value="0">
+  		  		<input type="number"  id="TSSU" readonly class="TileShower su" value="0">
+  		  		<input type="number"  readonly class="WallPaint CeilingPaint DrywallRemove ElectricalInstall Microwave Laundry Dishwasher Toilet Oven OvenHood Tv Sink KitchenFaucet BathroomFaucet CabinetRefinish bm1u" value="0">
+  		  		<input type="number"  readonly class="WallPaint CeilingPaint TrimPaint TileFloor TileShower DrywallRemove DrywallFinish ShelfInstall ElectricalInstall LightFixtureInstall Microwave Laundry Dishwasher CeilingFan Toilet Oven OvenHood Tv Sink KitchenFaucet BathroomFaucet Appliances DeckRepair CabinetRefinish StairRefinish bm2u" value="0">
+  		  		<input type="number"  readonly class="Baseboard QuarterRound WallPaint CeilingPaint TrimPaint TileFloor Backsplash TileShower DrywallReplace DrywallRemove DrywallFinish ShelfInstall ElectricalInstall LightFixtureInstall Microwave Laundry Dishwasher CeilingFan Toilet Oven OvenHood Tv Sink KitchenFaucet BathroomFaucet Appliances WallRepair DeckRepair CabinetRefinish DeckRefinish StairRefinish bm3u" value="0">
+  		  		<input type="number"  readonly class="Baseboard QuarterRound Crown WallPaint CeilingPaint TrimPaint TileShower Backsplash DrywallReplace DrywallRemove DrywallFinish CabinetInstall ShelfInstall ElectricalInstall LightFixtureInstall Microwave Laundry Dishwasher CeilingFan Toilet Oven OvenHood Tv Sink KitchenFaucet BathroomFaucet Appliances WallRepair DeckRepair CabinetRefinish DeckRefinish StairRefinish bm4u" value="0">
+  		  		<input type="number"  readonly class="Baseboard QuarterRound Crown WallPaint CeilingPaint TrimPaint TileShower Backsplash DrywallReplace DrywallRemove DrywallFinish CabinetInstall ShelfInstall ElectricalInstall LightFixtureInstall Microwave Laundry Dishwasher CeilingFan Toilet Oven OvenHood Tv Sink KitchenFaucet BathroomFaucet Appliances BathroomRemodel FloorRepair WallRepair DeckRepair CabinetRefinish DeckRefinish StairRefinish bm5u" value="0">
+  		  		<input type="number"  readonly class="Baseboard QuarterRound Crown WallPaint CeilingPaint TrimPaint TileFloor Backsplash TileShower DrywallReplace DrywallRemove DrywallFinish FloorInstall CabinetInstall ShelfInstall ElectricalInstall LightFixtureInstall Microwave Laundry Dishwasher CeilingFan Toilet Oven OvenHood Tv Sink KitchenFaucet BathroomFaucet Appliances BathroomRemodel FloorRepair WallRepair DeckRepair CabinetRefinish DeckRefinish StairRefinish bm6u" value="0">
+  		  		<input type="number"  readonly class="Baseboard QuarterRound Crown TileFloor Backsplash DrywallReplace CabinetInstall Microwave Laundry Dishwasher CeilingFan Toilet Oven OvenHood Tv Sink KitchenFaucet BathroomFaucet Appliances FloorRepair DeckRefinish su" value="0">
+  		  		<input type="number"  readonly class="Baseboard QuarterRound Crown WallPaint CeilingPaint TrimPaint TileFloor Backsplash TileShower DrywallReplace DrywallRemove DrywallFinish FloorInstall CabinetInstall ShelfInstall ElectricalInstall LightFixtureInstall Microwave Laundry Dishwasher CeilingFan Toilet Oven OvenHood Tv Sink KitchenFaucet BathroomFaucet Appliances KitchenRemodel FloorRepair WallRepair DeckRepair CabinetRefinish DeckRefinish StairRefinish smu" value="0">
+  		  		<input type="number"  readonly class="Baseboard QuarterRound Crown WallPaint CeilingPaint TileFloor Backsplash TileShower DrywallReplace DrywallRemove DrywallFinish FloorInstall CabinetInstall ShelfInstall LightFixtureInstall Microwave Laundry Dishwasher CeilingFan Toilet Oven OvenHood Tv Sink KitchenFaucet BathroomFaucet Appliances FloorRepair WallRepair DeckRepair CabinetRefinish DeckRefinish StairRefinish tu" value="0">
+  		  		<input type="number"  readonly class="Baseboard QuarterRound Crown WallPaint CeilingPaint TrimPaint TileFloor Backsplash TileShower DrywallReplace DrywallRemove DrywallFinish FloorInstall CabinetInstall ShelfInstall LightFixtureInstall Microwave Laundry Dishwasher CeilingFan Toilet Oven OvenHood Tv Sink KitchenFaucet BathroomFaucet Appliances FloorRepair KitchenRemodel WallRepair DeckRepair CabinetRefinish DeckRefinish StairRefinish tmu" value="0">
+  		  		<input type="number"  readonly class="Baseboard QuarterRound Crown WallPaint CeilingPaint TrimPaint TileFloor Backsplash TileShower DrywallReplace DrywallRemove DrywallFinish FloorInstall CabinetInstall ShelfInstall ElectricalInstall LightFixtureInstall Microwave Laundry Dishwasher CeilingFan Toilet Oven OvenHood Tv Sink KitchenFaucet BathroomFaucet Appliances FloorRepair WallRepair DeckRepair CabinetRefinish DeckRefinish StairRefinish fu" value="0">
+  		  		<input type="number"  readonly class="Baseboard QuarterRound Crown WallPaint CeilingPaint TrimPaint TileFloor Backsplash TileShower DrywallReplace DrywallRemove DrywallFinish CabinetInstall ShelfInstall ElectricalInstall LightFixtureInstall Microwave Laundry Dishwasher CeilingFan Toilet Oven OvenHood Tv Sink KitchenFaucet BathroomFaucet Appliances BathroomRemodel FloorRepair WallRepair DeckRepair CabinetRefinish DeckRefinish StairRefinish cu" value="0">
+  		  		
+  		  		
+  		  	</fieldset>
+  		  	
+  		  	
+  		  </form>	
+  		</div>
+			<span class="d-md-none"><br><br></span>
+  		<div class="col-12 col-md-6" id="estResult">
+  			<div class="col-10 col-md-8 d-none mx-auto" id="resultCont">
+				<p class="h3 col-12">Your Estimated Cost Is....</p>
+				<div class="col-12 bg-light mx-auto rounded py-2" id="results">
+					<p class="h1"></p>
+				</div>
+				<span><br></span>
+				<div class="input-group col gy-2">
+					<input type="text" class="form-control rounded" placeholder="email" aria-label="email" aria-describedby="email estimate">
+					&nbsp;&nbsp;
+					<div class="input-group-append">
+						<button class="btn" type="button" onClick="notDevd()">Email Me This</button>
+					</div>
+				</div>
+				<span><br></span>
+				<div class="mx-auto text-center">
+						<p class="h4">Didn’t find what you need?<br>
+							<a id="estResContact" href="#contact">Contact Us</a> to set up an appointment</p>
+				</div>
+  		</div>
+  	</div>
+  	
+    </div>
+		<span class="py-1 row"></span>
+	</div>
+  
+  <div class="container-fluid" id="contact">
+		<div class="col-12 text-center">
+  	  <h3 class="h3">Contact Us</h3>
+	  </div>
+		<div class="row">
+		<span><br><br></span>
+		<div class="col-9 col-md-6 mx-auto" id="info">
+			<div class="ms-md-5">
+			<p class="h5 text-center text-md-start">Our Info</p>
+			<span><br></span>
+			<div class="contactImg">
+				<img class="align-baseline" src="/images/icons/phone.svg" alt="Phone Number"> 
+				<p class="d-inline-block">440-654-3802</p>
+			</div>
+
+				<span><br></span>
+		
+			<div class="contactImg">
+				<img class="align-baseline" src="/images/icons/email.svg" alt="Phone Number">
+				<div class="d-inline-block"><p>cdrcarehomesrvc@gmail.com</p></div>
+			</div>
+
+			<span><br></span>
+			
+			<div class="contactImg" id="contactEmail">
+				<img class="align-top" src="/images/icons/mail.svg" alt="Phone Number"> 
+				<p class="d-inline-block">
+					4456 N Abbe Rd<br>
+					Box 132<br>
+					Sheffield, OH 44054
+				</p>
+			</div>
+			</div>
+		</div>
+		<span class="d-block d-md-none"><br><br></span> 
+		<div class="col-12 col-md-6" id="message">
+			<div class="ms-md-5">
+			<p class="h5 row text-center text-md-start"><span>Leave a Message</span></p>
+			<form id="contactForm" class="row">
+				
+				<div class="input-group row mx-auto gy-2">
+					<input type="text" class="form-control col col-md-3 rounded" placeholder="Name" aria-label="name" aria-describedby="name">
+					<span class="col-md-8"></span>
+				</div>
+				
+				<div class="input-group row mx-auto gy-2">
+					<input type="text" class="form-control col col-md-3 rounded" placeholder="Email" aria-label="email" aria-describedby="email">
+				  <span class="col-md-8"></span>
+				</div>
+
+				<div class="input-group row mx-auto gy-2">
+					<input type="text" class="form-control col col-md-3 rounded" placeholder="Phone Number" aria-label="phone number" aria-describedby="phone number">
+				  <span class="col-md-8"></span>
+				</div>
+
+				<div class="input-group row mx-auto gy-2">
+					<textarea class="form-control col col-md-3 rounded" placeholder="Message" aria-label="message" aria-describedby="email message" rows="7"></textarea>
+				</div>
+
+				<button class="btn btn-primary mx-auto ms-md-3 col-10 col-md-3 gy-2 rounded" onClick="notDevd()" type="button">Send Message</button>
+			</form>
+			<span><br></span>
+		</div>
+  	</div>
+		</div>
+  </div>
+
+	<div class="container-fluid" id="footer">
+		<span class="row py-3"></span>
+    <div class="row d-none d-md-flex">
+			<div class="col-6 col-lg-4">
+				<div class="col-10 col-xl-8 mx-auto">
+				  <img src="/images/icons/logo.svg" onclick="location.href='#top'" alt="Commander Care" class="col-10">
+					<span><br><br></span>
+					<a id="fbLink" href="CCAREFB">
+						<img src="/images/icons/facebook.svg" class="footThumb align-center" alt="facebook">
+					  cdrcarehomesrvc
+					</a>
+					<br>
+					<img src="/images/icons/phone-light.svg" class="footThumb align-center" alt="phone">
+					  440-654-3802
+					<br>
+					<img src="/images/icons/email-light.svg" class="footThumb align-center" alt="email">
+					  cdrcarehomesrvc@gmail.com
+				</div>
+			</div>
+
+			<div class="col-6 col-lg-4">
+				<div class="col-8 col-xl-6 mx-auto mt-4">
+					<p class="h4">Resources</p>
+					<div id="resourceLinks">
+						<a href="PPolicy">Privacy Policy</a>
+						<span class="py-1 row"></span>
+						<a href="TUse">Terms of Use</a>
+						<span class="py-1 row"></span>
+						<a href="TaC">Terms and Conditions</a>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="col-6 col-lg-4 d-none d-lg-block">
+				<div class="col-9 col-xl-6 mx-auto mt-4 text-center">
+					<button type="button" onclick="location.href='#contactForm'" class="btn btn-light px-4 py-3" id="estFooter">Get a Free Estimate</button>
+					<br><br>
+					<button type="button" onClick="notDevd()" class="btn btn-light" id="portalFooter">Customer Portal</button>
+				</div>
+			</div>
+			<span class="row py-1"></span>
+		</div>
+		<div class="row d-flex d-md-none">
+			<div class="row">
+				<div class="col-9 mx-auto">
+					<img src="/images/icons/logo.svg" alt="Commander Care" class="img-fluid">
+				</div>
+			</div>
+			<div class="row gy-2">
+				<div class="col-10 mx-auto text-center">
+					<div id="resourceLinks">
+						<a href="PPolicy">Privacy Policy</a>
+						<span class="py-1 row"></span>
+						<a href="TUse">Terms of Use</a>
+						<span class="py-1 row"></span>
+						<a href="TaC">Terms and Conditions</a>
+					</div>
+				</div>
+			</div>
+			<span class="row py-2"></span>
+		</div>
+		<div class="text-center row align-self-end" id="copyright"><span>© 2022 Commander Care Home Services, LLC</span></div>
+	</div>
+  
+<script src="/javascripts/script.js"></script>  
+</body>
+</html>
