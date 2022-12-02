@@ -63,6 +63,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-http.createServer(app).listen(process.env.PORT);
-
+app.listen(process.env.PORT, function () {
+  console.log('***** exp listening on port: ' + process.env.PORT);
+});
 module.exports = app;
