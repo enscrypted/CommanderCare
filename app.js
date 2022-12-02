@@ -36,8 +36,6 @@ app.post('/', (req, res) => {
 
   let query = 'Select * From 5me where type=?';
 
-  db.query('USE ccare');
-
   db.query(query, type, function (error, results) {
     if(error) {
       throw error;
