@@ -19,6 +19,17 @@ router.get('/', function(req, res, next) {
   res.render('index', {folder: folders, img: images});
 });
 
+router.get('/privacy', function(req, res, next) {
+  res.render('privacy');
+});
+
+router.get('/conditions', function(req, res, next) {
+  res.render('conditions');
+});
+
+router.get('/disclaimer', function(req, res, next) {
+  res.render('disclaimer');
+});
 router.use(express.static(path.join(__dirname, 'public')));
 
 module.exports = router;
