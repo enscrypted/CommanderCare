@@ -2,4 +2,3 @@
 node_modules
 *.sql
 sessions
-bin
