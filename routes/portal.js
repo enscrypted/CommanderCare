@@ -493,6 +493,7 @@ function validateUserNoRedirect(req, user, membership) {
   // store user permission level to session file
   req.session.permissionLevel = membership.role;
   req.session.userName = user.username; // store user user name to session file
+  req.session.userId = user.id; // store id for clock in/out verification for employees
   let query = 'Update memberships Set lastLoginDate=? Where id=?';
   db.query(query, [membership.id, new Date(Date.now()).toISOString().slice(0, 19).replace('T', ' ')], function(error, data) {
     if(error) {
