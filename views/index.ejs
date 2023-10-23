@@ -13,6 +13,9 @@
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
  
@@ -31,7 +34,7 @@
           <a class="nav-link col-12 col-lg px-0" aria-current="page" href="#jobs">Our Work</a>
           <a class="nav-link col-12 col-lg px-0" aria-current="page" href="#est">5 Minute Estimate</a> 
           <a class="nav-link col-12 col-lg px-0" aria-current="page" href="#contact">Contact Us</a>  
-          <button id="cust" class="btn btn-light col-12 col-lg px-0" onClick="notDevd()" aria-current="page" type="button">Customer Portal</button>
+          <button id="cust" class="btn btn-light col-12 col-lg px-0" onclick="location.href='/portal'" aria-current="page" type="button">Customer Portal</button>
         </div>
       </div>
     </div>
@@ -396,7 +399,7 @@ affordable your project could be*
   		  <p class="h3">1. Select Job Type</p>
   		  <form id="estForm" class="row g-2">
   		  	<select class="form-select w-100 d-inline-block" id="Category" aria-label="Job Category">
-  		  		<option selected>Category</option>
+  		  		<option value="-1" selected>Category</option>
   		  		<option value="Carpentry">Carpentry</option>
   		  		<option value="Painting">Painting</option>
   		  		<option value="Tile">Tile</option>
@@ -408,28 +411,28 @@ affordable your project could be*
   		  	</select>
   		  	<div class="d-none d-md-inline-block" id="selSpace">&nbsp;&nbsp;</div>
   		  	<select class="form-select w-100 d-none jobType" id="Carpentry-JobSelect" aria-label="Job Type">
-  		  		<option selected>Type</option>
+  		  		<option value="-1" selected>Type</option>
   		  		<option value="Baseboard">Baseboard</option>
   		  		<option value="QuarterRound">Quarter Round</option>
   		  		<option value="Crown">Crown</option>
   		  	</select>
   		  	
   		  	<select class="form-select w-100 d-none jobType" id="Painting-JobSelect" aria-label="Job Type">
-  		  		<option selected>Type</option>
+  		  		<option value="-1" selected>Type</option>
   		  		<option value="WallPaint">Walls</option>
   		  		<option value="CeilingPaint">Ceiling</option>
   		  		<option value="TrimPaint">Trim</option>
   		  	</select>
   		  	
   		  	<select class="form-select w-100 d-none jobType" id="Tile-JobSelect" aria-label="Job Type">
-  		  		<option selected>Type</option>
+  		  		<option value="-1" selected>Type</option>
   		  		<option value="TileFloor">Floor</option>
   		  		<option value="Backsplash">Backsplash</option>
   		  		<option value="TileShower">Shower</option>
   		  	</select>
   		  	
   		  	<select class="form-select w-100 d-none jobType" id="Drywall-JobSelect" aria-label="Job Type">
-  		  		<option selected>Type</option>
+  		  		<option value="-1" selected>Type</option>
   		  		<option value="DrywallReplace">Replace</option>
   		  		<option value="DrywallRemove">Remove</option>
   		  		<option value="DrywallFinish">Finish</option>
@@ -437,7 +440,7 @@ affordable your project could be*
   		  	
   		  	
   		  	<select class="form-select w-100 d-none jobType" id="Installation-JobSelect" aria-label="Job Type">
-  		  		<option selected>Type</option>
+  		  		<option value="-1" selected>Type</option>
   		  		<option value="FloorInstall">Floor</option>
   		  		<option value="CabinetInstall">Cabinets</option>
   		  		<option value="ShelfInstall">Shelves</option>
@@ -447,20 +450,20 @@ affordable your project could be*
   		  	</select>
   		  	
   		  	<select class="form-select w-100 d-none jobType" id="Remodeling-JobSelect" aria-label="Job Type">
-  		  		<option selected>Type</option>
+  		  		<option value="-1" selected>Type</option>
   		  		<option value="KitchenRemodel">Kitchen</option>
   		  		<option value="BathroomRemodel">Bathroom</option>
   		  	</select>
   		  	
   		  	<select class="form-select w-100 d-none jobType" id="Repair-JobSelect" aria-label="Job Type">
-  		  		<option selected>Type</option>
+  		  		<option value="-1" selected>Type</option>
   		  		<option value="DeckRepair">Deck Repair</option>
   		  		<option value="FloorRepair">Floor Repair</option>
   		  		<option value="WallRepair">Wall Repair</option>
   		  	</select>
   		  	
   		  	<select class="form-select w-100 d-none jobType" id="Refinish-JobSelect" aria-label="Job Type">
-  		  		<option selected>Type</option>
+  		  		<option value="-1" selected>Type</option>
   		  		<option value="CabinetRefinish">Cabinets</option>
   		  		<option value="DeckRefinish">Deck</option>
   		  		<option value="StairRefinish">Stairs</option>
@@ -517,7 +520,7 @@ affordable your project could be*
   		  	    </div>
   		  	
   		  	    <select class="field form-select w-100 bm1u TrimPaint d-none" aria-label="Trim Color">
-  		  	    	<option selected>Current Trim Color</option>
+  		  	    	<option value="-1" selected>Current Trim Color</option>
   		  	    	<option value="0">White</option>
   		  	    	<option value="1">Brown</option>
   		  	    </select>
@@ -565,19 +568,19 @@ affordable your project could be*
 						  </div>
   		  	    
   		  	    <select class="form-select w-100 bm1u ShelfInstall d-none field" aria-label="Shelf Type">
-  		  	    	<option selected>Shelf Type</option>
+  		  	    	<option value="-1" selected>Shelf Type</option>
   		  	    	<option value="0">Standard</option>
   		  	    	<option value="1">Custom Built</option>
   		  	    </select>
   		  	    
   		  	    <select class="form-select w-100 bm1u LightFixtureInstall d-none field" aria-label="Light Fixture Type">
-  		  	    	<option selected>Installation Type</option>
+  		  	    	<option value="-1" selected>Installation Type</option>
   		  	    	<option value="1">New Location</option>
   		  	    	<option value="0">Replace Exisiting</option>
   		  	    </select>
   		  	    
   		  	    <select class="form-select w-100 bm1u WallRepair d-none field" aria-label="Wall Type">
-  		  	    	<option selected>Wall Type</option>
+  		  	    	<option value="-1" selected>Wall Type</option>
   		  	    	<option value="0">Drywall</option>
   		  	    	<option value="1">Wood</option>
   		  	    </select>
@@ -590,7 +593,7 @@ affordable your project could be*
   		  	    </div>
   		  	    
   		  	    <select class="form-select w-100 bm1u StairRefinish d-none field" aria-label="Refinish Type">
-  		  	    	<option selected>Refinish Area</option>
+  		  	    	<option value="-1" selected>Refinish Area</option>
   		  	    	<option value="1">Full Stair</option>
   		  	    	<option value="0">Only Stair Tops</option>
   		  	    </select>
@@ -682,7 +685,7 @@ affordable your project could be*
   		  	    </div>
   		  	    
   		  	    <select class="form-select w-100 bm2u DrywallReplace d-none field" aria-label="Replace Type">
-  		  	    	<option selected>Work Required</option>
+  		  	    	<option value="-1" selected>Work Required</option>
   		  	    	<option value="0">Installation Only</option>
   		  	    	<option value="1">Installation and Finishing</option>
   		  	    </select>
@@ -695,7 +698,7 @@ affordable your project could be*
   		  	    </div>
   		  	    
   		  	    <select class="form-select w-100 bm3u Crown d-none field" aria-label="Crown Type">
-  		  	    	<option selected>Crown Type</option>
+  		  	    	<option value="-1" selected>Crown Type</option>
   		  	    	<option value="0">One Piece</option>
   		  	    	<option value="1">Two Piece</option>
   		  	    	<option value="2">Three Piece</option>
@@ -781,7 +784,7 @@ affordable your project could be*
   		  	    <div class="input-group row gy-1 su KitchenRemodel CabinetRefinish d-none field">
   		  	    	<input class="form-control col-4 col-md-2" type="number" value="0" id="faceC">
                     <label class="form-label col-8 col-md-10 my-auto" for="faceC">
-                      Number of Cabinet Doors <span class="KitchenRemodel d-none">(0 if replacing)</span>
+                      Number of Cabinet Doors <span class="KitchenRemodel field d-none">(0 if replacing)</span>
 					</label>
   		  	    </div>
   		  	    
@@ -849,7 +852,7 @@ affordable your project could be*
   		  	    </div>
   		  	    
   		  	    <select class="form-select w-100 cu FloorInstall d-none field" aria-label="Floor Brand">
-  		  	    	<option selected>Store Purchased From</option>
+  		  	    	<option value="-1" selected>Store Purchased From</option>
   		  	    	<option value="0">Lowes</option>
   		  	    	<option value="0">Home Depot</option>
   		  	    	<option value="1">Lumber Liquidators</option>
@@ -921,10 +924,10 @@ affordable your project could be*
 				</div>
 				<span><br></span>
 				<div class="input-group col gy-2">
-					<input type="text" class="form-control rounded" placeholder="email" aria-label="email" aria-describedby="email estimate">
+					<input id="sendEstEmail" type="text" class="form-control rounded" placeholder="email" aria-label="email" aria-describedby="email estimate">
 					&nbsp;&nbsp;
 					<div class="input-group-append">
-						<button class="btn" type="button" onClick="notDevd()">Email Me This</button>
+						<button class="btn" type="button" onClick="sendEstimate()">Email Me This</button>
 					</div>
 				</div>
 				<span><br></span>
@@ -980,25 +983,25 @@ affordable your project could be*
 			<form id="contactForm" class="row">
 				
 				<div class="input-group row mx-auto gy-2">
-					<input type="text" class="form-control col col-md-3 rounded" placeholder="Name" aria-label="name" aria-describedby="name">
+					<input type="text" id="contactFormName" name="contactFormName"  class="form-control col col-md-3 rounded" placeholder="Name" aria-label="name" aria-describedby="name" required>
 					<span class="col-md-8"></span>
 				</div>
 				
 				<div class="input-group row mx-auto gy-2">
-					<input type="text" class="form-control col col-md-3 rounded" placeholder="Email" aria-label="email" aria-describedby="email">
+					<input type="text" id="contactFormEmail" name="contactFormEmail" class="form-control col col-md-3 rounded" placeholder="Email" aria-label="email" aria-describedby="email" required>
 				  <span class="col-md-8"></span>
 				</div>
 
 				<div class="input-group row mx-auto gy-2">
-					<input type="text" class="form-control col col-md-3 rounded" placeholder="Phone Number" aria-label="phone number" aria-describedby="phone number">
+					<input type="text" id="contactFormNumber" name="contactFormNumber" class="form-control col col-md-3 rounded" placeholder="Phone Number" aria-label="phone number" aria-describedby="phone number">
 				  <span class="col-md-8"></span>
 				</div>
 
 				<div class="input-group row mx-auto gy-2">
-					<textarea class="form-control col col-md-3 rounded" placeholder="Message" aria-label="message" aria-describedby="email message" rows="7"></textarea>
+					<textarea id="contactFormMessage" name="contactFormMessage" class="form-control col col-md-3 rounded" placeholder="Message" aria-label="message" aria-describedby="email message" rows="7" required></textarea>
 				</div>
 
-				<button class="btn btn-primary mx-auto ms-md-3 col-10 col-md-3 gy-2 rounded" onClick="notDevd()" type="button">Send Message</button>
+				<button id="contactFormButton" class="btn btn-primary mx-auto ms-md-3 col-10 col-md-3 gy-2 rounded" type="submit">Send Message</button>
 			</form>
 			<span><br></span>
 		</div>
@@ -1044,7 +1047,7 @@ affordable your project could be*
 				<div class="col-9 col-xl-6 mx-auto mt-4 text-center">
 					<button type="button" onclick="location.href='#contact'" class="btn btn-light px-4 py-3" id="estFooter">Get a Free Estimate</button>
 					<br><br>
-					<button type="button" onClick="notDevd()" class="btn btn-light" id="portalFooter">Customer Portal</button>
+					<button type="button" onclick="location.href='/portal'" class="btn btn-light" id="portalFooter">Customer Portal</button>
 				</div>
 			</div>
 			<span class="row py-1"></span>

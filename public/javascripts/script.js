@@ -1,3 +1,21 @@
+toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-bottom-center",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+
 $('#Category').on('change', function() {
   var id = $(this).val() + '-JobSelect';
   $('#step-2').addClass('d-none');
@@ -107,6 +125,140 @@ $('#surfC').on('input', function(){
   }
 });
 
+
+$('#contactForm').validate({
+  rules: {
+    contactFormName: {required: true},
+    contactFormNumber: {required: false},
+    contactFormEmail: {required: true, email: true},
+    contactFormMessage: {required: true}
+  },
+  submitHandler: function(form) {
+    contactFormEmail();
+  }
+});
+
+function sendEstimate() {
+  var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if(!emailRegex.test($('#sendEstEmail').val())) {
+    // ERROR TOAST
+    return;
+  }
+  var cat = $('#Category').val()
+  var jobType = $('#' + cat + '-JobSelect').find('option:selected').html().trim();
+  var step2Measurement = $('#step-2 > div').not('.d-none');
+  var measurement = $(step2Measurement).find('input').val();
+  var measurementUnit = $(step2Measurement).find('span').html();
+  var applianceType;
+  if(jobType === 'Appliances') {
+    applianceType = $('#step-2 > select').find('option:selected').html().trim();
+  }
+  var modifiers = getRadios();
+  modifiers = modifiers.concat(getInputs());
+  modifiers = modifiers.concat(getSelects());
+  var additionals = getChecks();
+  sendEstimateEmail(cat, jobType, measurement, measurementUnit, applianceType, modifiers, additionals);
+}
+
+function getRadios() {
+  var modifiers = [];
+  var radioButtons = $('#step-3 > div').not('.d-none').find('div > input:radio');
+  radioButtons.each(function() {
+    if(this.checked) {
+      var name = $(this).parent().parent().contents().get(0).nodeValue.trim();
+      var value = $(this).parent().find('label').html().trim();
+      modifiers.push({name: name, value: value});
+    }
+  });
+  return modifiers;
+}
+
+function getInputs() {
+  var modifiers = [];
+  var nonCheckInputs = $('#step-3 > div').not('.d-none').find('input:not(:checkbox)').not(':radio');
+  nonCheckInputs.each(function() {
+    var name = $(this).parent().find('label').contents().get(0).nodeValue.trim();
+    var value = $(this).val();
+    modifiers.push({name: name, value: value});
+  });
+  return modifiers;
+}
+
+function getSelects() {
+  var modifiers = [];
+  var dropDowns = $('#step-3 > select').not('.d-none');
+  dropDowns.each(function() {
+    var name;
+    var value;
+    $(this).children().each(function() {
+      if($(this).val() === "-1" && !this.selected) {
+        name = $(this).html().trim();
+      }
+      if($(this).val() !== "-1" && this.selected) {
+        value = $(this).html().trim();
+      }
+    });
+    if(name && value) {
+      modifiers.push({name: name, value: value});
+    }
+  });
+  return modifiers;
+}
+
+function getChecks() {
+  var additionals = [];
+  var checkBoxes = $('#step-3 > div').not('.d-none').find(':checkbox');
+  checkBoxes.each(function() {
+    if(this.checked) {
+      additionals.push($(this).parent().find('label').html().trim());
+    }
+  });
+  return additionals;
+}
+
+function sendEstimateEmail(cat, jobType, measurement, measurementUnit, applianceType, modifiers, additionals) {
+  const data = {
+    email: $('#sendEstEmail').val(),
+    category: cat,
+    jobType: jobType,
+    measurement: measurement,
+    measurementUnit: measurementUnit,
+    applianceType: applianceType ? applianceType : null,
+    modifiers: JSON.stringify(modifiers),
+    additionals: JSON.stringify(additionals),
+    price: $('#results > p').html().trim()
+  }
+  $.ajax({
+    type: "POST",
+    url: "/sendestimateemail",
+    data: data,
+    success: function() {
+      toastr["success"]("Email Sent!");
+    },
+    error: function() {
+      toastr["success"]("Error sending email. Please try again.");
+    }});
+}
+
+function contactFormEmail() {
+  const data = {
+    name: $('#contactFormName').val(),
+    number: $('#contactFormNumber').val(),
+    email: $('#contactFormEmail').val(),
+    message: $('#contactFormMessage').val()
+  }
+  $.ajax({
+    type: "POST",
+    url: "/sendcontactemail",
+    data: data,
+    success: function() {
+      toastr["success"]("Email Sent!");
+    },
+    error: function() {
+      toastr["success"]("Error sending email. Please try again.");
+    }});
+}
+
 function generateEst() {
   var classType = '#' + $('#Category').val() + '-JobSelect';
   var job = "." + $(classType).val();
@@ -123,6 +275,9 @@ function generateEst() {
             } else {
                 displayEst(calculateEst(data.elements, job));
             }
+        },
+        error: function() {
+          alert("Error: Incomplete Form");
         }
     });
 }

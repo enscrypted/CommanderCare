@@ -1,0 +1,82 @@
+#sidebar {
+  background-color: #26265e;
+  height: 100vh;
+  display: inline-block;
+}
+
+.nav-link {
+  border-radius: 0 !important;
+}
+
+.pageContent {
+  margin-left: 1rem;
+}
+
+.blueButton {
+  background-color: #26265e !important;
+  color: #f8f8f8 !important;
+  transition: 0.2s;
+  border-color: #26265e !important;
+}
+
+.blueButton:hover {
+  background-color: #e0e0e0 !important;
+  color: #26265e !important;
+}
+
+#addUser:hover {
+  cursor: pointer;
+}
+
+.popup {
+  width: 100%;
+  height:100%;
+  position:fixed;
+  background:rgba(0,0,0,0.6);
+  top:0;
+  left:0;
+  z-index: 10000;
+}
+
+.popup > div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f8f8f8;
+  padding: 2%;
+  border: 2px solid #26265e;
+  border-radius: 5px;
+  height: 70%; /* Set the desired height for the container */
+  overflow: auto; /* Enable vertical scrolling */
+}
+
+#userForm label {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#userForm input[type="text"],
+#userForm input[type="email"],
+#userForm input[type="tel"],
+#userForm input[type="checkbox"] {
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 50px;
+}
+
+.popup > div::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: #f8f8f8;
+}
+
+.popup > div::-webkit-scrollbar-thumb {
+  background-color: #e0e0e0;
+}
+
+.popup > div::-webkit-scrollbar-track {
+  background-color: #f8f8f8;
+}

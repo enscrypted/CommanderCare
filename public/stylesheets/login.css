@@ -1,0 +1,52 @@
+#submit {
+	background-color: #26265e !important;
+	color: #f8f8f8 !important;
+}
+
+#loginBlock {
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  border: 2px solid #26265e;
+}
+
+#submit:hover {
+  color: #26265e !important;
+	background-color: #f8f8f8 !important;
+}
+
+.loginIcon {
+  background-color: #26265e !important;
+}
+
+h3 {
+  color: #26265e !important; 
+}
+
+#codeSubmit {
+  display: none;
+}
+
+#mfaSelect {
+  margin-left: 4%;
+}
+
+#mfaSelectButton {
+	background-color: #26265e !important;
+	color: #f8f8f8 !important;
+}
+
+#mfaSelectButton:hover {
+  color: #26265e !important;
+	background-color: #f8f8f8 !important;
+}
+
+#mainContainer {
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 200px;
+  width: 60vw;
+  border: 2px solid #26265e;
+}

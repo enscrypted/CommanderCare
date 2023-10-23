@@ -1,0 +1,41 @@
+<nav class="navbar-nav sticky-top d-md-none navbar-expand-lg shadow" id="header">
+  <div class="container-fluid row align-items-center">
+    <a class="navbar-brand align-self-center col-6 col-lg-2" href="#top">
+      <img src="/images/icons/logo.svg" alt="Commander Care" class="img-fluid">
+    </a>
+    <button id="burger" class="navbar-toggler col-6 align-self-center text-end" type="button" data-bs-toggle="collapse" data-bs-target="#headlist" aria-controls="headlist" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon py-4"></span>
+    </button>
+    <div id="headlist" class="collapse navbar-collapse col-12 col-md-9 float-end">
+      <div class="navbar nav ms-auto text-end text-lg-center w-100">
+        <a class="nav-link col-12 col-lg px-0" aria-current="page" href="/portal/employee/">Account</a>
+        <a class="nav-link col-12 col-lg px-0" aria-current="page" href="/portal/employee/shifts">Shift Management</a>    
+        <a class="nav-link col-12 col-lg px-0" aria-current="page" href="/portal/logout">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="d-flex">
+  <div class="d-none d-md-flex flex-column flex-shrink-0" id="sidebar" style="width: 5rem;">
+    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+      <li class="nav-item py-3">
+        <a href="/portal/employee/" class="nav-link py-3 my-auto border-bottom" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+          <img src="/images/icons/account.svg" alt="Account" class="img-fluid">
+          <span class="visually-hidden">Account</span>
+        </a>
+      </li>
+      <li class="nav-item py-3">
+        <a href="/portal/employee/shifts" class="nav-link py-3 my-auto border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+          <img src="/images/icons/clock.svg" alt="Invoices" class="img-fluid">
+          <span class="visually-hidden">Shift Management</span>
+        </a>
+      </li>
+    </ul>
+    <div class="">
+      <a href="/portal/logout" class="d-flex align-items-center p-1 border-radius-0 border-top nav-link">
+        <img src="/images/icons/logout.svg" alt="Logout" class="img-fluid">
+        <span class="visually-hidden">Logout</span>
+      </a>
+    </div>
+  </div>
