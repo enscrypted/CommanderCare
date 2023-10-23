@@ -225,11 +225,13 @@ app.post('/portal/admin/addUser', function(req, res, next) {
 
 app.post('/portal/employee/clockIn', function(req, res, next) {
   if(!req.session.isLoggedIn || !req.body.id || req.body.id !== req.session.userId) {
+    console.log('Invalid permission level or mismatched/missing id');
     res.status(500).send(null);
     return;
   }
   Employee.findByPk(req.body.id).then(employee => {
     if(employee.clockedIn) {
+      console.log('employee ' + req.session.userName + ' already clocked in');
       res.status(500).send(null);
       return;
     }
@@ -243,26 +245,26 @@ app.post('/portal/employee/clockIn', function(req, res, next) {
         if(!shifts || shifts.length === 0) {
           const shiftData = {
             id: crypto.randomUUID(),
-            shiftDate: new Date(Date.now()).toLocaleDateString(),
+            shiftDate: new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York'),
             weekDay: new Date(Date.now()).getDay(),
             paid: false,
             employeeId: req.body.id,
-            clockIns: new Date(Date.now()).toLocaleTimeString(),
+            clockIns: new Date(Date.now()).toLocaleTimeString('en-us', 'America/New_York'),
             clockOuts: null
           }
           Shift.create(shiftData).then(onfulfilled => {
-            console.log(req.session.userName + " clocked in on " + new Date(Date.now()).toLocaleDateString()
-                          + " at " + new Date(Date.now()).toLocaleTimeString());
+            console.log(req.session.userName + " clocked in on " + new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York')
+                          + " at " + new Date(Date.now()).toLocaleTimeString('en-us', 'America/New_York'));
             res.status(200).send(null);
             return;
           });
         }
-        else if(shifts.some(shift => shift.shiftDate == new Date(Date.now()).toLocaleDateString())) {
-          let shift = shifts.filter(shift => shift.shiftDate == new Date(Date.now()).toLocaleDateString())[0];
-          shift.clockIns = shift.clockIns + ';' + new Date(Date.now()).toLocaleTimeString();
+        else if(shifts.some(shift => shift.shiftDate == new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York'))) {
+          let shift = shifts.filter(shift => shift.shiftDate == new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York'))[0];
+          shift.clockIns = shift.clockIns + ';' + new Date(Date.now()).toLocaleTimeString('en-us', 'America/New_York');
           shift.save().then(onfulfilled => {
-            console.log(req.session.userName + " clocked in on " + new Date(Date.now()).toLocaleDateString()
-                          + " at " + new Date(Date.now()).toLocaleTimeString());
+            console.log(req.session.userName + " clocked in on " + new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York')
+                          + " at " + new Date(Date.now()).toLocaleTimeString('en-us', 'America/New_York'));
             res.status(200).send(null);
             return;
           });
@@ -270,16 +272,16 @@ app.post('/portal/employee/clockIn', function(req, res, next) {
         else {
             const shiftData = {
               id: crypto.randomUUID(),
-              shiftDate: new Date(Date.now()).toLocaleDateString(),
+              shiftDate: new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York'),
               weekDay: new Date(Date.now()).getDay(),
               paid: false,
               employeeId: req.body.id,
-              clockIns: new Date(Date.now()).toLocaleTimeString(),
+              clockIns: new Date(Date.now()).toLocaleTimeString('en-us', 'America/New_York'),
               clockOuts: null
             }
             Shift.create(shiftData).then(onfulfilled => {
-              console.log(req.session.userName + " clocked in on " + new Date(Date.now()).toLocaleDateString()
-                            + " at " + new Date(Date.now()).toLocaleTimeString());
+              console.log(req.session.userName + " clocked in on " + new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York')
+                            + " at " + new Date(Date.now()).toLocaleTimeString('en-us', 'America/New_York'));
               res.status(200).send(null);
               return;
             });
@@ -295,6 +297,7 @@ app.post('/portal/employee/clockOut', function(req, res, next) {
   }
   Employee.findByPk(req.body.id).then(employee => {
     if(!employee.clockedIn) {
+      console.log('employee ' + req.session.userName + ' already clocked in');
       res.status(500).send(null);
       return;
     }
@@ -307,28 +310,28 @@ app.post('/portal/employee/clockOut', function(req, res, next) {
       }).then(shifts => {
         if(!shifts || shifts.length === 0) {
           console.log(req.session.userName + " tried to clock out from a nonexistent shift on "
-                        + new Date(Date.now()).toLocaleDateString + " at " + new Date(Date.now()).toLocaleTimeString());
+                        + new Date(Date.now()).toLocaleDateString + " at " + new Date(Date.now()).toLocaleTimeString('en-us', 'America/New_York'));
             res.status(500).send();
             return;
         }
-        else if(shifts.some(shift => shift.shiftDate == new Date(Date.now()).toLocaleDateString())) {
-          let shift = shifts.filter(shift => shift.shiftDate == new Date(Date.now()).toLocaleDateString())[0];
+        else if(shifts.some(shift => shift.shiftDate == new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York'))) {
+          let shift = shifts.filter(shift => shift.shiftDate == new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York'))[0];
           if(!shift.clockOuts) {
-            shift.clockOuts = new Date(Date.now()).toLocaleTimeString();
+            shift.clockOuts = new Date(Date.now()).toLocaleTimeString('en-us', 'America/New_York');
           }
           else {
-            shift.clockOuts = shift.clockOuts + ';' + new Date(Date.now()).toLocaleTimeString();
+            shift.clockOuts = shift.clockOuts + ';' + new Date(Date.now()).toLocaleTimeString('en-us', 'America/New_York');
           }
           shift.save().then(onfulfilled => {
-            console.log(req.session.userName + " clocked out on " + new Date(Date.now()).toLocaleDateString()
-                          + " at " + new Date(Date.now()).toLocaleTimeString());
+            console.log(req.session.userName + " clocked out on " + new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York')
+                          + " at " + new Date(Date.now()).toLocaleTimeString('en-us', 'America/New_York'));
             res.status(200).send(null);
             return;
           });
         }
         else {
             console.log(req.session.userName + " tried to clock out from a nonexistent shift on "
-                        + new Date(Date.now()).toLocaleDateString() + " at " + new Date(Date.now()).toLocaleTimeString());
+                        + new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York') + " at " + new Date(Date.now()).toLocaleTimeString('en-us', 'America/New_York'));
             res.status(500).send();
             return;
          }
@@ -357,7 +360,7 @@ app.post('/portal/admin/payEmployee', async function(req, res, next) {
   }
 
   shifts = shifts.filter(shift => !shift.paid 
-                                 && shift.shiftDate !== new Date(Date.now()).toLocaleDateString()
+                                 && shift.shiftDate !== new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York')
                                  && shift.clockIns.split(';').length === shift.clockOuts.split(';').length);
   
   console.log('shifts: ' + shifts);

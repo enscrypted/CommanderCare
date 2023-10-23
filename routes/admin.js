@@ -13,7 +13,7 @@ router.get('/', async function(req, res, next) {
       let shifts = await Shift.findAll();
       let unpaidHoursByEmployee = null;
       shifts = shifts.filter(shift => !shift.paid 
-                                     && shift.shiftDate !== new Date(Date.now()).toLocaleDateString()
+                                     && shift.shiftDate !== new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York')
                                      && shift.clockIns.split(';').length === shift.clockOuts.split(';').length);
       if(shifts) {
         unpaidHoursByEmployee = shifts.reduce((acc, shift) => {

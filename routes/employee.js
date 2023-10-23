@@ -41,7 +41,7 @@ router.get('/shifts', function(req, res, next) {
             }).then(shifts => {
               let unpaidHours = 0;
               if(shifts && shifts.length > 0) {
-                shifts = shifts.filter(shift => shift.shiftDate !== new Date(Date.now()).toLocaleDateString()
+                shifts = shifts.filter(shift => shift.shiftDate !== new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York')
                                                 && shift.clockIns 
                                                 && shift.clockOuts 
                                                 && shift.clockIns.split(';').length == shift.clockOuts.split(';').length);
