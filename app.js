@@ -738,8 +738,8 @@ function buildNewUserEmail(username, url) {
   body += "<p>Hello,</p>";
   body += "<p>An account has been created for you on commandercare.net! Your username is <b>" + username + "</b>. "
        + "To set your password, please navigate to the link below and enter your desired password."
-       + "To access your account in the future, click the \"Customer Portal\" button at both the top "
-       + "and bottom of the homepage. Then, simply login using the password you set.</p><br>";
+       + "To access your account in the future, click the \"Customer Portal\" button at either the top "
+       + "or bottom of the homepage. Then, simply login using the password you set.</p><br>";
   body += "<a href=\"" + url + "\">Click Here to Set Your Password</a>";
   body += "<br><br>";
   body += "<p>Thank you, and welcome to Commander Care!";
