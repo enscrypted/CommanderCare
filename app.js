@@ -12,6 +12,8 @@ const Mfa = require("./models/Mfa.js");
 const Shift = require("./models/Shift.js");
 const bcrypt = require('bcrypt');
 const common = require('./routes/lib/common');
+const geoip = require('geoip-lite');
+
 
 const db = require("./db.js").con;
 
@@ -75,6 +77,27 @@ app.use('/portal/customer/', customerRouter);
 app.use('/portal/', portalRouter);
 app.use('/portal/admin/', adminRouter);
 app.use('/portal/employee/', employeeRouter);
+
+let bannedIps = [];
+
+app.use((req, res, next) => {
+  const clientIP = req.ip;
+
+  const location = geoip.lookup(clientIP);
+
+  if(bannedIps.includes(clientIP)) {
+    console.log('Malicious request from: ' + clientIP);
+    return res.status(403).send('Access from China is not allowed');
+  }
+
+  if (location && location.country && location.country === 'CN') {
+    bannedIps.push(clientIP);
+    console.log('Malicious request from: ' + clientIP);
+    return res.status(403).send('Access from China is not allowed.');
+  }
+
+  next();
+});
 
 app.post('/', (req, res) => {
   if(!req.body.type) {

@@ -73,7 +73,12 @@
           location.reload();
       },
       error: function() {
-          alert("There was an issue, please try again. If it still doesn't work, keep track of your hours manually.");
+          if(confirm("There was an issue, please try again. If it still doesn't work, keep track of your hours manually.")) {
+            location.reload();
+          }
+          else {
+            location.reload();
+          }
       }
     });
   }
