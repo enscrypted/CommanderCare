@@ -222,7 +222,7 @@ router.post('/authenticate', function(req, res, next) {
               if(req.body.rememberToken) {
                 var rememberedList = mfaInfo.rememberedTokens === null ? [] : mfaInfo.rememberedTokens.split(',');
                 var tokenHash = bcrypt.hashSync(req.body.rememberToken, membership.salt);
-                if(rememberedList !== [] && !rememberedList.includes(tokenHash)) {
+                if(!rememberedList.includes(tokenHash)) {
                   rememberedList.push(tokenHash);
                 }
                 var joinedRememberList = rememberedList.join(',');
