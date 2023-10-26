@@ -109,107 +109,106 @@
 </body>
 
 <script>
-
-  $.validator.addMethod('username', function(value, element) {
-    return this.optional(element) || value.length >= 3;
-  }, 'Username must be at least 3 characters long.');
-
-  $.validator.addMethod('userType', function(value, element) {
-  console.log('value: ' + value);
-  return value !== "User Type";
-  }, 'User type is required');
-
-  $.validator.addMethod('phoneNumber', function(value, element) {
-  var phoneNumber = value.replace(/\D/g, '');
-  return this.optional(element) || phoneNumber.length === 10;
-}, 'Phone number must exactly 10 digits long.');
-
-  $('#userForm').validate({
-    rules: {
-      fullName: {required: true},
-      email: {required: true, email: true},
-      primaryPhone: {required: true, phoneNumber: true},
-      secondaryPhone: {required: false, phoneNumber: true},
-      address: {required: true},
-      city: {required: true},
-      state: {required: true},
-      zip: {required: true},
-      username: {required: true, username: true},
-      userType: {required: true, userType: true}
-    }
-  });
-
   $(document).ready(function() {
-    refreshUserList();
-  });
 
-  $('#userList').on('change', function() {
-    refreshUserList();
-  });
+    $.validator.addMethod('username', function(value, element) {
+      return this.optional(element) || value.length >= 3;
+    }, 'Username must be at least 3 characters long.');
 
-$('#userForm').submit(function(e) {
-    e.preventDefault();
+    $.validator.addMethod('userType', function(value, element) {
+    console.log('value: ' + value);
+    return value !== "User Type";
+    }, 'User type is required');
 
-    if (!$(this).valid()) {
-      return;
-    }
+    $.validator.addMethod('phoneNumber', function(value, element) {
+    var phoneNumber = value.replace(/\D/g, '');
+    return this.optional(element) || phoneNumber.length === 10;
+  }, 'Phone number must exactly 10 digits long.');
 
-    var formData = $(this).serialize();
-
-    $.ajax({
-      url: '/portal/admin/addUser',
-      type: 'POST',
-      data: formData,
-      success: function(response) {
-        if(response.success) {
-          // add success toast
-          $('#addUserForm').hide();
-        }
-        else {
-          // add error toast
-          $('#addUserError').html(response.reason);
-        }
-      },
-      error: function(xhr, status, error) {
-        $('#addUserError').html("A system error occurred, please refer to the logs to see why");
+    $('#userForm').validate({
+      rules: {
+        fullName: {required: true},
+        email: {required: true, email: true},
+        primaryPhone: {required: true, phoneNumber: true},
+        secondaryPhone: {required: false, phoneNumber: true},
+        address: {required: true},
+        city: {required: true},
+        state: {required: true},
+        zip: {required: true},
+        username: {required: true, username: true},
+        userType: {required: true, userType: true}
       }
     });
-  });
 
-  function refreshUserList() {
-    $('.userInfo').hide();
-    $('#' + $('#userList').val()).show();
-  }
+    $('#userList').on('change', function() {
+      refreshUserList();
+    });
 
-  function showAddUserPopup() {
-    $('#addUserForm').show();
-  }
+  $('#userForm').submit(function(e) {
+      e.preventDefault();
 
-  function closePopup() {
-    $('#addUserForm').hide();
-  }
+      if (!$(this).valid()) {
+        return;
+      }
 
-  function resetPassword(id) {
-    // TODO
-    alert('Not quite ready yet...');
-  }
+      var formData = $(this).serialize();
 
-  function payEmployee(id) {
-    const data = {
-      id: id
+      $.ajax({
+        url: '/portal/admin/addUser',
+        type: 'POST',
+        data: formData,
+        success: function(response) {
+          if(response.success) {
+            // add success toast
+            $('#addUserForm').hide();
+          }
+          else {
+            // add error toast
+            $('#addUserError').html(response.reason);
+          }
+        },
+        error: function(xhr, status, error) {
+          $('#addUserError').html("A system error occurred, please refer to the logs to see why");
+        }
+      });
+    });
+
+    function refreshUserList() {
+      $('.userInfo').hide();
+      $('#' + $('#userList').val()).show();
     }
 
-    $.ajax({
-      url: '/portal/admin/payEmployee',
-      type: 'POST',
-      data: data,
-      success: function(response) {
-        location.reload();
-      },
-      error: function(xhr, status, error) {
-        alert("There was an issue paying the employee. Please try again.");
+    function showAddUserPopup() {
+      $('#addUserForm').show();
+    }
+
+    function closePopup() {
+      $('#addUserForm').hide();
+    }
+
+    function resetPassword(id) {
+      // TODO
+      alert('Not quite ready yet...');
+    }
+
+    function payEmployee(id) {
+      const data = {
+        id: id
       }
-    });
-  }
+
+      $.ajax({
+        url: '/portal/admin/payEmployee',
+        type: 'POST',
+        data: data,
+        success: function(response) {
+          location.reload();
+        },
+        error: function(xhr, status, error) {
+          alert("There was an issue paying the employee. Please try again.");
+        }
+      });
+    }
+    refreshUserList();
+  });
 </script>
 </html>
