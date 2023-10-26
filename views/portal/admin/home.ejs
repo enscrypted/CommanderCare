@@ -161,11 +161,9 @@ $('#userForm').submit(function(e) {
       data: formData,
       success: function(response) {
         if(response.success) {
-          // add success toast
-          $('#addUserForm').hide();
+          location.reload();
         }
         else {
-          // add error toast
           $('#addUserError').html(response.reason);
         }
       },
