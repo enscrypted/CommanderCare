@@ -27,7 +27,7 @@
     <br>
     <div class="row">
       <div class="col-2 d-flex">
-        <select id="userList" class="flex-column">
+        <select id="userList" class="flex-column form-select w-100">
           <% users.forEach(u => { %>
             <option value="<%=u.id%>"<% if (activeUsername === u.username) { %>selected<% } %>><%=u.fullName%> &lt;<%=u.email%>&gt;</option>
           <% });%>

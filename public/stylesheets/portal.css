@@ -80,3 +80,7 @@
 .popup > div::-webkit-scrollbar-track {
   background-color: #f8f8f8;
 }
+
+#userList {
+  background-color: #e0e0e0 !important;
+}
