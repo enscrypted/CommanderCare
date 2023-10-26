@@ -24,6 +24,12 @@
   color: #26265e !important;
 }
 
+@media (max-width: 768px) {
+  #addUser {
+    width: 10%;
+  }
+}
+
 #addUser:hover {
   cursor: pointer;
 }
