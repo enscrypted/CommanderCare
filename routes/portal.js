@@ -92,6 +92,9 @@ router.post('/login', function(req, res, next) {
   let query = 'Select * From users where username=?';
   db.query(query, [userName], function(error, data) {
     if(error || data.length === 0) {
+      if(error) {
+        console.log(error);
+      }
       console.log('login failed, no user found');
       res.render('./portal/login', {error: true});
       return;
