@@ -79,9 +79,14 @@ app.use('/portal/admin/', adminRouter);
 app.use('/portal/employee/', employeeRouter);
 
 let bannedIps = new Set();
+let whitelistedIps = new Set();
 
 app.use((req, res, next) => {
   const clientIP = req.ip;
+
+  if(whitelistedIps.has(clientIP)) {
+    return next();
+  }
 
   if(bannedIps.has(clientIP)) {
     console.log('Malicious request from: ' + clientIP);
@@ -95,6 +100,8 @@ app.use((req, res, next) => {
     console.log('Malicious request from: ' + clientIP);
     return res.status(403).send('Access from China is not allowed.');
   }
+
+  whitelistedIps.add(clientIP);
 
   next();
 });
