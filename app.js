@@ -78,20 +78,20 @@ app.use('/portal/', portalRouter);
 app.use('/portal/admin/', adminRouter);
 app.use('/portal/employee/', employeeRouter);
 
-let bannedIps = [];
+let bannedIps = new Set();
 
 app.use((req, res, next) => {
   const clientIP = req.ip;
 
-  const location = geoip.lookup(clientIP);
-
-  if(bannedIps.includes(clientIP)) {
+  if(bannedIps.has(clientIP)) {
     console.log('Malicious request from: ' + clientIP);
     return res.status(403).send('Access from China is not allowed');
   }
 
+  const location = geoip.lookup(clientIP);
+
   if (location && location.country && location.country === 'CN') {
-    bannedIps.push(clientIP);
+    bannedIps.add(clientIP);
     console.log('Malicious request from: ' + clientIP);
     return res.status(403).send('Access from China is not allowed.');
   }
