@@ -13,6 +13,7 @@ const Shift = require("./models/Shift.js");
 const bcrypt = require('bcrypt');
 const common = require('./routes/lib/common');
 const geoip = require('geoip-lite');
+const scheduler = require('./scheduler.js');
 
 
 const db = require("./db.js").con;
