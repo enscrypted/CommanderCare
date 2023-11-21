@@ -58,8 +58,10 @@ function sendClockOutEmail(username) {
 }
 
 function buildClockOutEmail(username) {
+  var date = new Date(Date.now());
+  date = date.setDate(date.getDate() - 1);
   var body = "<b>" + username + "</b> forgot to clock out on ";
-  body += new Date(Date.now()).toLocaleDateString('en-us', 'America/New_York');
+  body += date.toLocaleDateString('en-us', 'America/New_York');
   body += ".<br><p>Please get their hours and update in the database accordingly.</p>";
   return body;
 }
