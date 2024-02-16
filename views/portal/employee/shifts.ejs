@@ -53,7 +53,7 @@
       url: "/portal/employee/clockIn",
       data: data,
       success: function() {
-          location.reload();
+          location.href = '/portal/login';
       },
       error: function() {
           alert("There was an issue, please try again. If it still doesn't work, keep track of your hours manually.");
@@ -70,7 +70,7 @@
       url: "/portal/employee/clockOut",
       data: data,
       success: function() {
-          location.reload();
+        location.href = '/portal/login';
       },
       error: function() {
           if(confirm("There was an issue, please try again. If it still doesn't work, keep track of your hours manually.")) {
