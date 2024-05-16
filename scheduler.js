@@ -15,7 +15,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
 }));
 
 // auto clocking out employees that forgot 12AM EST every day
-cron.schedule('39 1 * * *', async () => {
+cron.schedule('0 5 * * *', async () => {
   await autoClockOut();
 });
 
