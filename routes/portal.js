@@ -154,7 +154,8 @@ router.get('/authenticate', function(req, res, next) {
   const authenticateInfo = {
     authToken: req.query.authToken,
     email: req.query.email,
-    appEnabled: req.query.appEnabled
+    appEnabled: req.query.appEnabled,
+    error: false
   }
   res.render('./portal/authenticate', authenticateInfo);
 });
@@ -164,7 +165,16 @@ router.post('/authenticate', function(req, res, next) {
   let username = Buffer.from(req.body.authToken, 'base64').toString('utf8').split(';')[0].toLowerCase();
   let password = encryptor.aesDecrypt(Buffer.from(req.body.authToken, 'base64').toString('utf8').split(';')[1]);
   let mfaType = req.body.mfaChoice;
-  let code = req.body.code; 
+  let code = req.body.code;
+
+  const errorPayload = {
+    authToken: req.body.authToken,
+    email: req.body.email,
+    mfaType: req.body.mfaType,
+    appEnabled: mfaType == 'app' ? '1' : '0',
+    error: true
+  }
+
   
   // search for row in table with given username
   // user input automatically sanitized
@@ -172,18 +182,19 @@ router.post('/authenticate', function(req, res, next) {
   db.query(query, [username], function(error, data) {
     if(error || data.length === 0) {
       console.log('login failed, no user found');
-      res.render('./portal/authenticate', {error: true});
+      res.render('./portal/authenticate', errorPayload);
       return;
     }
+
     let user = data[0];
     query = 'Select * From memberships where id=?';
     db.query(query, [user.id], function(error, data) {
       if(error || data.length === 0) {
         console.log('login failed, no membership found');
-        res.render('./portal/authenticate', {error: true});
+        res.render('./portal/authenticate', errorPayload);
         return;
       }
-    
+
       // hash inputted password and compare to hash in table
       // salt is saved in table (will be unique for each user and
       // generated upon registration/password set)
@@ -191,7 +202,7 @@ router.post('/authenticate', function(req, res, next) {
       bcrypt.hash(password, membership.salt, function(err, hash) {
         if(err) {
           console.log(err);
-          res.render('./portal/authenticate', {error: true});
+          res.render('./portal/authenticate', errorPayload);
           return;
         }
 
@@ -201,10 +212,10 @@ router.post('/authenticate', function(req, res, next) {
           query = 'Select * From mfa where id=?';
           db.query(query, [user.id], function(error, data) {
             if(error || data.length === 0) {
-              console.log('login failed, no mfa stats');
-              res.render('./portal/login', {error: true});
+              res.render('./portal/login', errorPayload);
               return;
             }
+
             mfaInfo = data[0];
             var authenticated;
             switch(mfaType) {
@@ -236,10 +247,14 @@ router.post('/authenticate', function(req, res, next) {
               validateUser(req, res, user, membership);
               return;
             }
+            else {
+              res.render('./portal/authenticate', errorPayload);
+              return;
+            }
           });
         }
         else {
-          res.render('./portal/authenticate', {error: true});
+          res.render('./portal/authenticate', errorPayload);
           return;
         }
       });

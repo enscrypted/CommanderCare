@@ -26,7 +26,7 @@
       <h3>User Authentication</h3>
     </div>
     <div class="col-6 mx-auto shadow" id="mainContainer">
-      <div id="mfaSelect">
+      <div id="mfaSelect" style="<%=error ? 'display: none' : ''%>">
         <!--Send Email to-->
         <div class="form-check pl-2">
           <input class="form-check-input" type="checkbox" name="mfaType" id="mfaEmail" value="1" />
@@ -44,10 +44,15 @@
           Submit
         </button>
       </div>
-      <div id="codeSubmit" class="w-100">
+      <div id="codeSubmit" class="w-100" style="<%=error ? 'display: block' : ''%>">
         <form id="#authForm" action="/portal/authenticate" method="post">
           <div class="p-4">
               <div class="input-group mb-3">
+                <% if(error) { %>
+                  <p class="error mx-auto" style="color: red">
+                    There was an error authenticating. Please double check the code and try again.
+                  </p>
+                <%}%>
                 <input type="text" class="form-control w-100" placeholder="Auth Code" name="code">
               </div>
               <input id="rememberToken" name="rememberToken" class="d-none" type="text" />
