@@ -144,8 +144,8 @@ app.post('/portal/authenticate/email', function(req, res, next) {
     let userEmail = results[0].email;
     let userName = results[0].username;
     let id = results[0].id;
-    query = "Update mfa Set emailCode = ?, codeExpiration = ? Where id=?";
-    db.query(query, [code, expiration, id], function(error, results) {
+    query = "Update mfa Set emailCode = ?, codeExpiration = ?, attempts = ? Where id=?";
+    db.query(query, [code, expiration, 0, id], function(error, results) {
       if(error || results.length === 0) {
         console.log(error);
         res.status(500).send(null);
