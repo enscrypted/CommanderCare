@@ -172,12 +172,12 @@ app.post('/portal/authenticate/appsecret', function(req, res, next) {
 
 app.post('/sendcontactemail', function(req, res, next) {
   let data = req.body;
-  sendContactEmail(data.name, data.email, data.number, data.message, res);
+  // sendContactEmail(data.name, data.email, data.number, data.message, res);
 });
 
 app.post('/sendestimateemail', function(req, res, next) {
   let data = req.body;
-  sendEstimateEmail(data.email, data.category, data.jobType, data.measurement, data.measurementUnit, data.applianceType, JSON.parse(data.modifiers), JSON.parse(data.additionals), data.price, process.env.ADMIN_EMAIL, process.env.COMMANDER_EMAIL, 1, res);
+  // sendEstimateEmail(data.email, data.category, data.jobType, data.measurement, data.measurementUnit, data.applianceType, JSON.parse(data.modifiers), JSON.parse(data.additionals), data.price, process.env.ADMIN_EMAIL, process.env.COMMANDER_EMAIL, 1, res);
 });
 
 app.post('/portal/admin/addUser', function(req, res, next) {

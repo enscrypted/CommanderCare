@@ -139,6 +139,8 @@ $('#contactForm').validate({
 });
 
 function sendEstimate() {
+  alert('This feature is temporarily disabled, sorry for the inconviencence! Feel free to email any questions/concerns to commander@commandercare.net');
+  return;
   var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if(!emailRegex.test($('#sendEstEmail').val())) {
     // ERROR TOAST
@@ -241,6 +243,8 @@ function sendEstimateEmail(cat, jobType, measurement, measurementUnit, appliance
 }
 
 function contactFormEmail() {
+  alert('This feature is temporarily disabled, sorry for the inconviencence! Feel free to email any questions/concerns to commander@commandercare.net');
+  return;
   const data = {
     name: $('#contactFormName').val(),
     number: $('#contactFormNumber').val(),
